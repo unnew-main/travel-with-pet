@@ -23,7 +23,7 @@ main   :배포 브랜치
 develop  :main브랜치에 넘어가기 전단계, 모든 브랜치는 develop에서 생성되어야 합니다.
 
 Ex)
-feat-login   :로그인개발 브랜치 (main/develop/feat-login)
+feat/login   :로그인개발 브랜치 (main -> develop -> feat/login)
 
 <br/>
 
