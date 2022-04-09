@@ -22,7 +22,7 @@ export const NavItem = ({ pathName, children, customWidth }: NavItem) => {
           {children}
         </TypoGraphy>
 
-        <S.UnderBar isHover={router.pathname === pathName ? true : false} />
+        <S.UnderBar isActive={router.pathname === pathName ? true : false} />
       </S.NavWrapper>
     </Link>
   );

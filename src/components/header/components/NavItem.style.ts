@@ -1,5 +1,17 @@
+import { Children } from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
+
+export const UnderBar = styled.div<{ isActive: boolean }>`
+  position: absolute;
+  bottom: 0;
+  opacity: ${({ isActive }) => (isActive ? 100 : 0)};
+  background-color: ${customColor.white};
+  width: 100%;
+  height: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+`;
 
 export const NavWrapper = styled.div<{ customWidth: string }>`
   width: ${({ customWidth }) => customWidth + 'px'};
@@ -11,15 +23,7 @@ export const NavWrapper = styled.div<{ customWidth: string }>`
   margin-left: 10px;
   margin-right: 10px;
   cursor: pointer;
-`;
-
-export const UnderBar = styled.div<{ isHover: boolean }>`
-  position: absolute;
-  bottom: 0;
-  opacity: ${({ isHover }) => (isHover ? 100 : 0)};
-  background-color: ${customColor.white};
-  width: 100%;
-  height: 5px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  &:hover ${UnderBar} {
+    opacity: 100;
+  }
 `;

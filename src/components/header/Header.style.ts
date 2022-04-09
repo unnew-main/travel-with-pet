@@ -21,7 +21,7 @@ export const UpHeader = styled.div`
 `;
 export const TitleWrapper = styled.div`
   position: absolute;
-
+  cursor: pointer;
   margin-left: 30px;
   bottom: -5px;
   left: 0px;
@@ -37,7 +37,17 @@ export const WriteButtonWrapper = styled.div`
   margin-right: 20px;
 `;
 export const AlertButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${customColor.orange};
+  font-size: 25px;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+
+  color: ${customColor.white};
 `;
 
 export const DownHeader = styled.div`
