@@ -1,7 +1,6 @@
 import React from 'react';
 import * as S from './PhotoCard.style';
-import { Info } from './components/Info';
-import { Tag } from "./components/Tag";
+import { Info, Tag } from '../index';
 
 type Props = {
   ImageUrl?: string;
@@ -29,3 +28,4 @@ export const PhotoCard = ({
     </S.Container>
   );
 };
+
