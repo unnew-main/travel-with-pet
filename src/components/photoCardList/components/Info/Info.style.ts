@@ -18,3 +18,7 @@ export const ContentWrapper = styled.div`
   max-height: 2.4em;
   overflow: hidden;
 `;
+
+export const HeartWrapper = styled.div`
+  margin-right: 2px;
+`;

@@ -2,8 +2,7 @@ import React from 'react';
 import * as S from './Info.style';
 import { TypoGraphy } from 'src/components';
 import { customColor } from 'src/constants';
-import Image from 'next/image';
-import heart from 'src/assets/image/heart.png';
+import { FaHeart } from 'react-icons/fa';
 
 type Props = {
   Area: string;
@@ -20,7 +19,9 @@ export function Info({ Area, Like, Text, Writer, Date }: Props) {
           {Area}
         </TypoGraphy>
         <S.LikeWrapper>
-          <Image src={heart} alt="heart" width={16} height={16} />
+          <S.HeartWrapper>
+            <FaHeart color="red" />
+          </S.HeartWrapper>
           <TypoGraphy fontWeight="bold" type="body2">
             {Like}
           </TypoGraphy>
