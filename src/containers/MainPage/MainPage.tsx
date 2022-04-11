@@ -1,7 +1,6 @@
 import { NextPage } from 'next';
 import React from 'react';
-import { Notice } from 'src/components';
-import { FixedButton, Search } from './components';
+import { FixedButton, Search, Notice } from './components';
 
 export const MainPage: NextPage = () => {
   return (

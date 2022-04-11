@@ -2,4 +2,3 @@
 export { LayoutContainer } from "./LayoutContainer";
 export { TypoGraphy } from "./TypoGraphy";
 export { Seo } from "./Seo";
-export { Notice } from "./Notice";
