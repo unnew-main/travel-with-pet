@@ -1,8 +1,8 @@
-import { Editor } from "@toast-ui/react-editor";
-import React, { useRef } from "react";
-import "@toast-ui/editor/dist/toastui-editor.css";
+import { Editor } from '@toast-ui/react-editor';
+import React, { useRef } from 'react';
+import '@toast-ui/editor/dist/toastui-editor.css';
 
-const MyComponent = () => {
+export const EditorForm = () => {
   const editRef = useRef();
 
   return (
@@ -16,4 +16,3 @@ const MyComponent = () => {
     />
   );
 };
-export default MyComponent;
