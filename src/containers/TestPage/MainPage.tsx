@@ -7,7 +7,6 @@ export const MainPage: NextPage = () => {
   return (
     <>
       <PhotoCardList type="MainPage" />
-      <PhotoCardList type="MainPage" />
     </>
   );
 };

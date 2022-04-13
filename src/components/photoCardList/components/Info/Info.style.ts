@@ -17,6 +17,7 @@ export const ContentWrapper = styled.div`
   text-overflow: ellipsis;
   max-height: 2.4em;
   overflow: hidden;
+  min-height: 40px;
 `;
 
 export const HeartWrapper = styled.div`
