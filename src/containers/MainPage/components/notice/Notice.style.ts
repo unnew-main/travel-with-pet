@@ -13,6 +13,7 @@ export const NoticeWrapper = styled.div`
   display: flex;
   align-items: center;
   color: ${customColor.Brown};
+  white-space: nowrap;
 `;
 
 export const IconWrapper = styled.div`

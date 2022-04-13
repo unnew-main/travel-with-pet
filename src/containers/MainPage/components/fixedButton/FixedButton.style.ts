@@ -6,7 +6,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   z-index: 99;
   top: 70vh;
-  left: 85vw;
+  right: 100px;
+  @media screen and (max-width: 1600px) {
+    display: none;
+  }
 `;
 
 export const BasicKnow = styled.div`

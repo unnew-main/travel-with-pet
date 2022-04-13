@@ -26,7 +26,7 @@ export const Input = styled.input`
   border: none;
   background: transparent;
   border-bottom: 2px solid ${customColor.white};
-  width: 50vw;
+  width: 850px;
   padding: 0 0 5px 5px;
   color: ${customColor.white};
   font-size: 20px;
@@ -45,7 +45,7 @@ export const IconWrapper = styled.div`
 
 export const RecommendWrapper = styled.div`
   display: flex;
-  width: 50vw;
+  width: 850px;
   margin-top: 16px;
   align-items: flex-end;
   p:nth-child(1) {
