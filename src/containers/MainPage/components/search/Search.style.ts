@@ -48,8 +48,5 @@ export const RecommendWrapper = styled.div`
   width: 850px;
   margin-top: 16px;
   align-items: flex-end;
-  p:nth-child(1) {
-    margin-left: 2vw;
-  }
   justify-content: space-around;
 `;
