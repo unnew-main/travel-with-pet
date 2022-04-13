@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { TypoGraphy, Seo, CustomButton } from 'src/components';
-import { customColor } from 'src/constants/customColor';
+import React from 'react';
+import { CustomButton } from 'src/components';
+import { customColor } from 'src/constants/index';
 import styled from 'styled-components';
 
-export const ButtonBox: React.FC = ({}) => {
+export const ButtonBox: React.FC = () => {
   return (
     <Wrapper>
       <CustomButton
