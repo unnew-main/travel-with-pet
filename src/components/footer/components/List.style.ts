@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 export const TitleWrapper = styled.div`
   width: 100%;
   height: 25px;
-  border-bottom: 1px solid ${customColor.darkBrown};
+  border-bottom: 1px solid ${customColor.brownDark};
   margin-bottom: 10px;
   div {
     cursor: pointer;

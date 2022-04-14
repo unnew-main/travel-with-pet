@@ -1,5 +1,5 @@
 import * as S from './Footer.style';
-import { List } from './components/list';
+import { List } from './components/List';
 import { TypoGraphy } from '../TypoGraphy';
 import { customColor } from 'src/constants';
 import { AiFillGithub } from 'react-icons/ai';
@@ -11,18 +11,35 @@ export const Footer = () => {
       <S.Container>
         <S.Wrapper>
           <S.UpFooter>
-            <List title="추천" item={['여행', '음식점', '숙소', '기타']} />
-            <List title="나의 이야기" item={['리스트']} />
+            <List
+              titleName="정보"
+              titlePathName="/information"
+              item={[
+                { name: '여행', pathName: '/travel' },
+                { name: '음식점', pathName: '/shop' },
+                { name: '숙소', pathName: '/hotel' },
+                { name: '기타', pathName: '/other' },
+              ]}
+            />
+            <List
+              titleName="일상"
+              titlePathName="/daily"
+              item={[{ name: '리스트', pathName: '' }]}
+            />
           </S.UpFooter>
           <S.DownFooter>
             <S.TitleWrapper>
-              <TypoGraphy
-                type="h1"
-                color={customColor.darkBrown}
-                fontWeight="bold"
-              >
-                Title명
-              </TypoGraphy>
+              <Link href="/" passHref>
+                <a style={{ textDecoration: 'none' }}>
+                  <TypoGraphy
+                    type="h1"
+                    color={customColor.brownDark}
+                    fontWeight="bold"
+                  >
+                    MoengMoeng
+                  </TypoGraphy>
+                </a>
+              </Link>
             </S.TitleWrapper>
             <S.DownRightWrapper>
               <S.EmailWrapper>
