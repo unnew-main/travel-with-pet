@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import React from 'react';
 import { FixedButton, Search, Notice, Category } from './components';
-export const MainPage: NextPage = () => {
+export const InformationPage: NextPage = () => {
   return (
     <>
       <Search />

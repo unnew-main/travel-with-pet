@@ -23,6 +23,7 @@ export const Search = () => {
         objectFit="fill"
         alt="background"
         objectPosition="absolute"
+        priority
       />
       <S.ImageGrayFilter />
       <S.SearchWrapper>
