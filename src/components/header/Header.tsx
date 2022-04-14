@@ -10,14 +10,14 @@ export const Header = () => {
     <header>
       <S.Container>
         <S.UpHeader>
-          <Link href="/" passHref>
+          <Link href={'/'} passHref>
             <S.TitleWrapper>
               <TypoGraphy
                 type="Title"
                 color={customColor.darkBrown}
                 fontWeight="bold"
               >
-                Title 명
+                MoengMoeng
               </TypoGraphy>
             </S.TitleWrapper>
           </Link>
@@ -29,14 +29,14 @@ export const Header = () => {
           </S.UpLeftWrapper>
         </S.UpHeader>
         <S.DownHeader>
-          <NavItem pathName={'/'} customWidth="90">
+          <NavItem pathName={'/information'} customWidth="90">
             정보
           </NavItem>
-          <NavItem pathName={'/editor'} customWidth="140">
-            모두의 이야기
+          <NavItem pathName={'/daily'} customWidth="140">
+            일상
           </NavItem>
-          <NavItem pathName={'/'} customWidth="100">
-            내 정보
+          <NavItem pathName={'/mypage'} customWidth="100">
+            마이페이지
           </NavItem>
         </S.DownHeader>
       </S.Container>
