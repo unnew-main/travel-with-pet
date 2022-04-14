@@ -9,6 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 5px;
 `;
 
 export const UpHeader = styled.div`
