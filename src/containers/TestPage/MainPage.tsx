@@ -6,7 +6,6 @@ import { PhotoCardList } from 'src/components';
 export const MainPage: NextPage = () => {
   return (
     <>
-      <PhotoCardList type="MainPage" />
     </>
   );
 };

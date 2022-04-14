@@ -1,3 +1,3 @@
-export { PhotoCard } from './PhotoCard/PhotoCard';
-export { Info } from './Info/Info';
-export { Tag } from './Tag/Tag';
+export { PhotoCard } from './PhotoCard';
+export { Info } from './Info';
+export { Tag } from './Tag';
