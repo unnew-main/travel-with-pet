@@ -1,6 +1,26 @@
+import React from 'react';
+import { TypoGraphy } from 'src/components';
+import { customColor } from 'src/constants';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export function FixedButton() {
+  return (
+    <Wrapper>
+      <TypoGraphy type="h3" color={customColor.darkBrown} fontWeight="bold">
+        <BasicKnow>
+          기본상식
+          <br />
+          TIP
+        </BasicKnow>
+      </TypoGraphy>
+      <TypoGraphy type="body1" color={customColor.white} fontWeight="bold">
+        <TopButton>TOP</TopButton>
+      </TypoGraphy>
+    </Wrapper>
+  );
+}
+
+const Wrapper = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -12,7 +32,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const BasicKnow = styled.div`
+const BasicKnow = styled.div`
   display: flex;
   height: 100px;
   padding: 5px 10px 0 10px;
@@ -23,7 +43,7 @@ export const BasicKnow = styled.div`
   border-radius: 25px;
 `;
 
-export const TopButton = styled.div`
+const TopButton = styled.div`
   background-color: #e5b299;
   display: flex;
   height: 25px;
