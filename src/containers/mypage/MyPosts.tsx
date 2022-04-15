@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TypoGraphy } from '../TypoGraphy';
+import { TypoGraphy } from '../../components/TypoGraphy';
 
 export const MyPosts = () => {
   return (

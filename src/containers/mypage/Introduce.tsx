@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TypoGraphy } from '../TypoGraphy';
+import { TypoGraphy } from '../../components/TypoGraphy';
 import { BsPersonCircle } from 'react-icons/Bs';
 import { BiDotsVerticalRounded } from 'react-icons/Bi';
 import { customColor } from 'src/constants';
