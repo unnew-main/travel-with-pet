@@ -3,7 +3,7 @@ import { CustomButton } from 'src/components';
 import { customColor } from 'src/constants/index';
 import styled from 'styled-components';
 
-export const ButtonBox: React.FC = () => {
+export const ButtonBox = () => {
   return (
     <Wrapper>
       <CustomButton

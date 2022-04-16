@@ -4,8 +4,24 @@ import { customColor } from 'src/constants/customColor';
 import styled from 'styled-components';
 import { category, city } from 'src/dummy/index';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
+// 되는 경우 : 개별적으로 불러야 함
+// import { ButtonBox } from 'src/containers/Editor/components/ButtonBox';
 import { ButtonBox } from './components/ButtonBox';
 import { EditorForm } from './components/EditorForm';
+// 안되는 경우
+// index로 묶어서 내보내는 것
+// 넥스트만의 폴더 구조 문제인가...
+// import { ButtonBox } from './components';
+// import { ButtonBox } from './components/index';
+// import { ButtonBox } from './components/index';
+// import { ButtonBox } from 'src/containers/Editor/components';
+// import { ButtonBox } from 'src/containers/Editor/components/index';
+
+import { Editor } from '@toast-ui/react-editor';
+import React, { useRef } from 'react';
+import '@toast-ui/editor/dist/toastui-editor.css';
 
 type ToggleProps = {
   selected?: string;
@@ -20,7 +36,17 @@ type ItemProps = {
   selected: boolean;
 };
 
-export const EditorMainPage: NextPage = () => {
+export const EditorMainPage: React.FC = () => {
+  // const PixiComponentWithNoSSR = dynamic(
+  //   (): any => import('./components/EditorForm'),
+  //   { ssr: false },
+  // );
+
+  // const DynamicComponent = dynamic<React.ReactNode>(
+  //   (() => import('./components/EditorForm')) as any,
+  //   { ssr: false },
+  // );
+
   const [choose, setChoose] = useState('A');
 
   const [selectedCategory, setSelectedCategory] = useState<Selected>({
@@ -33,9 +59,36 @@ export const EditorMainPage: NextPage = () => {
     value: 'seoul',
   });
 
+  const editRef = useRef<any>();
+
+  // const Editors = dynamic(
+  //   {
+  //     loader: (): any =>
+  //       import('@toast-ui/react-editor').then(mod => mod.Editor),
+  //     render: (props, Editor) => {
+  //       const Editor = new Editor();
+  //       // Add logic with `term`
+  //       return (
+  //         <Editor
+  //           placeholder="내용을 입력해주세요"
+  //           previewStyle="vertical"
+  //           height="800px"
+  //           initialEditType="markdown"
+  //           useCommandShortcut={true}
+  //           ref={editRef}
+  //         />
+  //       );
+  //     },
+  //   },
+  //   {
+  //     ssr: false,
+  //   },
+  // );
+
   return (
     <Wrapper>
       <Seo title="글쓰기" />
+      {/* <DynamicComponent /> */}
       <ToggleBox>
         <ToggleButton_Left
           selected={choose}
@@ -92,6 +145,14 @@ export const EditorMainPage: NextPage = () => {
       <Input placeholder="#태그 #입력 #인천" />
       <Hr />
       {/* <EditorForm /> */}
+      {/* <Editor
+        placeholder="내용을 입력해주세요"
+        previewStyle="vertical"
+        height="800px"
+        initialEditType="markdown"
+        useCommandShortcut={true}
+        ref={editRef}
+      /> */}
       <ButtonBox />
     </Wrapper>
   );
