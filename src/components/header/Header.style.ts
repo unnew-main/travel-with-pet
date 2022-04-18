@@ -3,13 +3,13 @@ import { customColor } from 'src/constants';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: 88px;
 
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-  margin-bottom: 5px;
+  z-index: 99;
 `;
 
 export const UpHeader = styled.div`

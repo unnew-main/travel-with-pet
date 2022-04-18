@@ -2,7 +2,7 @@ import { customColor } from 'src/constants';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 400px;
   background-color: ${customColor.grayLight};
 `;
