@@ -57,5 +57,5 @@ export const DownHeader = styled.div`
   align-items: center;
   width: 100%;
   height: 45%;
-  background-color: ${customColor.darkBrown};
+  background-color: ${customColor.brownDark};
 `;
