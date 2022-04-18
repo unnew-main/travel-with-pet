@@ -32,6 +32,8 @@ export function Category({ category, pathName, children }: Props) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: 40px;
   width: 1178px;
 `;
@@ -40,7 +42,7 @@ const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 1178px;
   margin-bottom: 40px;
 `;
 
