@@ -3,7 +3,7 @@ import { CustomButton } from 'src/components';
 import { customColor } from 'src/constants/index';
 import styled from 'styled-components';
 
-export const ButtonBox = () => {
+export function ButtonBox() {
   return (
     <Wrapper>
       <CustomButton
@@ -16,7 +16,7 @@ export const ButtonBox = () => {
       <CustomButton text="등록" width={120} onClick={() => alert('취소')} />
     </Wrapper>
   );
-};
+}
 
 const Wrapper = styled.div`
   display: flex;

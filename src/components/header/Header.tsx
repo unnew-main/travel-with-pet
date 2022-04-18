@@ -14,7 +14,7 @@ export const Header = () => {
             <S.TitleWrapper>
               <TypoGraphy
                 type="Title"
-                color={customColor.darkBrown}
+                color={customColor.brownDark}
                 fontWeight="bold"
               >
                 MoengMoeng

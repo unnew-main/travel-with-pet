@@ -5,6 +5,7 @@ import { category, city } from 'src/dummy/index';
 import dynamic from 'next/dynamic';
 import React, { useState, useRef } from 'react';
 import { ButtonBox } from './components';
+// import { ButtonBox } from 'src/containers/Editor/components/ButtonBox';
 
 type ToggleProps = {
   selected?: string;
@@ -119,8 +120,9 @@ export const EditorMainPage: React.FC = () => {
 };
 const Wrapper = styled.div`
   width: 100%;
-  padding: 40px 80px;
+  padding: 40px 72px;
   padding-bottom: 0px;
+  overflow-x: hidden;
 `;
 const ToggleBox = styled.div`
   display: flex;
@@ -136,7 +138,7 @@ const ToggleButton_Left = styled.button<ToggleProps>`
   height: 32px;
   border-radius: 20px 0 0 20px;
   background-color: ${props =>
-    props.selected === 'A' ? customColor.darkBrown : customColor.lightGray};
+    props.selected === 'A' ? customColor.brownDark : customColor.grayLight};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,7 +149,7 @@ const ToggleButton_Left = styled.button<ToggleProps>`
   }
   & div {
     color: ${props =>
-      props.selected === 'A' ? customColor.white : customColor.lightBlack};
+      props.selected === 'A' ? customColor.white : customColor.blackLight};
   }
 `;
 
@@ -161,7 +163,7 @@ const ToggleButton_Right = styled.button<ToggleProps>`
   border-radius: 0 20px 20px 0;
   font-size: 14px;
   background-color: ${props =>
-    props.selected === 'B' ? customColor.darkBrown : customColor.lightGray};
+    props.selected === 'B' ? customColor.brownDark : customColor.grayLight};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,7 +173,7 @@ const ToggleButton_Right = styled.button<ToggleProps>`
   }
   & div {
     color: ${props =>
-      props.selected === 'B' ? customColor.white : customColor.lightBlack};
+      props.selected === 'B' ? customColor.white : customColor.blackLight};
   }
 `;
 
@@ -188,7 +190,7 @@ const City = styled.div`
 `;
 
 const Hr = styled.hr`
-  background-color: ${customColor.lightGray};
+  background-color: ${customColor.grayLight};
   margin: 4px 0 32px 0;
   width: 50%;
 `;
@@ -205,19 +207,19 @@ const Item = styled.div<ItemProps>`
   cursor: pointer;
 
   &:hover div {
-    color: ${customColor.darkBrown};
-    text-decoration: underline ${customColor.darkBrown};
+    color: ${customColor.brownDark};
+    text-decoration: underline ${customColor.brownDark};
     text-underline-position: under;
   }
 
   ${props =>
     props.selected &&
     `
-    color: ${customColor.darkBrown};
-    text-decoration: underline ${customColor.darkBrown};
+    color: ${customColor.brownDark};
+    text-decoration: underline ${customColor.brownDark};
     text-underline-position: under;
     & div{
-      color : ${customColor.darkBrown};
+      color : ${customColor.brownDark};
     }
     `}
 `;
