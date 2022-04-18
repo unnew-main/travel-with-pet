@@ -4,6 +4,12 @@ import { customColor } from 'src/constants';
 import styled from 'styled-components';
 
 export function FixedButton() {
+  const moveTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
   return (
     <Wrapper>
       <TypoGraphy type="h3" color={customColor.brownDark} fontWeight="bold">
@@ -14,7 +20,9 @@ export function FixedButton() {
         </BasicKnow>
       </TypoGraphy>
       <TypoGraphy type="body1" color={customColor.white} fontWeight="bold">
-        <TopButton>TOP</TopButton>
+        <TopButton onClick={moveTop}>
+          TOP
+        </TopButton>
       </TypoGraphy>
     </Wrapper>
   );
@@ -52,4 +60,11 @@ const TopButton = styled.div`
   margin-top: 3px;
   border-radius: 25px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  :hover {
+    transform: scale(1.05);
+  }
+  :active {
+    transform: scale(0.95);
+  }
 `;

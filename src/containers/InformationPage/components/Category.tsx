@@ -2,20 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import { TypoGraphy } from 'src/components';
 import { customColor } from 'src/constants';
+import Link from 'next/link';
 type Props = {
   category: string;
+  pathName: string;
   children: React.ReactNode;
 };
-export function Category({ category, children }: Props) {
+export function Category({ category, pathName, children }: Props) {
   return (
     <Container>
       <TitleWrapper>
         <TypoGraphy type="Title" fontWeight="bold">
           {category}
         </TypoGraphy>
-        <TypoGraphy type="body1" fontWeight="bold">
-          더보기
-        </TypoGraphy>
+        <Link href={'/information' + pathName} passHref>
+          <a style={{textDecoration: 'none'}}>
+            <TypoGraphy type="body1" fontWeight="bold">
+              더보기
+            </TypoGraphy>
+          </a>
+        </Link>
       </TitleWrapper>
       {children}
       <Line />

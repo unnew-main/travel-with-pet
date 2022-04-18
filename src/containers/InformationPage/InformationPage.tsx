@@ -9,16 +9,16 @@ export const InformationPage: NextPage = () => {
       <Search />
       <Notice />
       <FixedButton />
-      <Category category="여행">
+      <Category category="여행" pathName='/travel'>
         <PhotoCardList type="MainPage" />
       </Category>
-      <Category category="음식점">
+      <Category category="음식점" pathName='/shop'>
         <PhotoCardList type="MainPage" />
       </Category>
-      <Category category="숙소">
+      <Category category="숙소" pathName='/hotel'>
         <PhotoCardList type="MainPage" />
       </Category>
-      <Category category="기타">
+      <Category category="기타" pathName='/other'>
         <PhotoCardList type="MainPage" />
       </Category>
     </Container>

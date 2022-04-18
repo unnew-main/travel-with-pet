@@ -1,3 +1,3 @@
 export { EditorMainPage } from "./Editor/EditorMainPage";
 export { MainPage } from "./TestPage/MainPage";
-import { InformationPage } from "./InformationPage/InformationPage";
+export { InformationPage } from "./InformationPage/InformationPage";
