@@ -47,13 +47,13 @@ export const Search = () => {
 
 const Container = styled.div`
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 300px;
 `;
 
 const ImageGrayFilter = styled.div`
   height: 300px;
-  width: 100vw;
+  width: 100%;
   background-color: ${customColor.black};
   opacity: 0.3;
 `;

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export function FixedButton() {
   return (
     <Wrapper>
-      <TypoGraphy type="h3" color={customColor.darkBrown} fontWeight="bold">
+      <TypoGraphy type="h3" color={customColor.brownDark} fontWeight="bold">
         <BasicKnow>
           기본상식
           <br />

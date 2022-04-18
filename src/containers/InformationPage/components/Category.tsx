@@ -41,5 +41,4 @@ const TitleWrapper = styled.div`
 const Line = styled.div`
   border-bottom: 1px solid ${customColor.gray};
   width: 1178px;
-  margin-top: 80px;
 `;

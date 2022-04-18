@@ -11,7 +11,7 @@ export const Notice = () => {
         <IconWrapper>
           <BsMegaphone fontSize={30} />
         </IconWrapper>
-        <TypoGraphy type="h3" color={customColor.Brown} fontWeight="bold">
+        <TypoGraphy type="h3" color={customColor.brown} fontWeight="bold">
           공지 : 타인에게 상처주는 말은 삼가해주세요. 모두가 누군가의 소중한
           ‘주인’ 이자 ‘가족’ 입니다.
         </TypoGraphy>
@@ -22,7 +22,7 @@ export const Notice = () => {
 };
 
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +32,7 @@ const Container = styled.div`
 const NoticeWrapper = styled.div`
   display: flex;
   align-items: center;
-  color: ${customColor.Brown};
+  color: ${customColor.brown};
   white-space: nowrap;
 `;
 
