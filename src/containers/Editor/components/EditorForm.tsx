@@ -2,8 +2,7 @@ import { Editor } from '@toast-ui/react-editor';
 import React, { useRef } from 'react';
 import '@toast-ui/editor/dist/toastui-editor.css';
 
-export const EditorForm: React.FC = () => {
-
+function EditorForm(): JSX.Element {
   const editRef = useRef<any>();
 
   return (
@@ -16,4 +15,6 @@ export const EditorForm: React.FC = () => {
       ref={editRef}
     />
   );
-};
+}
+
+export default EditorForm;
