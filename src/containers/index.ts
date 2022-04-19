@@ -1,3 +1,5 @@
-export { MainPage } from "./TestPage/MainPage";
 export { EditorMainPage } from "./Editor/EditorMainPage";
-import { PhotoCardTest } from './PhotoCardTest/PhotoCardTest';
+export { MainPage } from "./TestPage/MainPage";
+
+export { InformationPage } from "./InformationPage/InformationPage";
+
