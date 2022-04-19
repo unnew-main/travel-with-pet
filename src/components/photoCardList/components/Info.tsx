@@ -16,7 +16,7 @@ export function Info(props: Props) {
   return (
     <>
       <ItemWrapper>
-        <TypoGraphy fontWeight="bold" color={customColor.darkBrown} type="h3">
+        <TypoGraphy fontWeight="bold" color={customColor.brownDark} type="h3">
           {Area}
         </TypoGraphy>
         <LikeWrapper>
