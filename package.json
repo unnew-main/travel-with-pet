@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@toast-ui/react-editor": "^3.1.3",
@@ -28,5 +29,6 @@
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.5.0",
     "typescript": "^4.6.3"
-  }
+  },
+  "homepage": "https://potato-club.github.io/travel-with-pet/"
 }

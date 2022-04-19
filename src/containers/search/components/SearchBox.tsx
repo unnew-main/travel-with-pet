@@ -46,22 +46,22 @@ export const SearchBox = () => {
       <UpperWrapper>
         <HeaderListWrapper>
           <Header>
-            <TypoGraphy type="body1" color={customColor.lightBlack}>
+            <TypoGraphy type="body1" color={customColor.blackLight}>
               카테고리
             </TypoGraphy>
           </Header>
           <Header>
-            <TypoGraphy type="body1" color={customColor.lightBlack}>
+            <TypoGraphy type="body1" color={customColor.blackLight}>
               지역
             </TypoGraphy>
           </Header>
           <Header>
-            <TypoGraphy type="body1" color={customColor.lightBlack}>
+            <TypoGraphy type="body1" color={customColor.blackLight}>
               종류
             </TypoGraphy>
           </Header>
           <Header>
-            <TypoGraphy type="body1" color={customColor.lightBlack}>
+            <TypoGraphy type="body1" color={customColor.blackLight}>
               제목/태그/작성자
             </TypoGraphy>
           </Header>
@@ -78,8 +78,8 @@ export const SearchBox = () => {
                   type="body1"
                   color={
                     selectedCategory === props
-                      ? customColor.darkBrown
-                      : customColor.lightBlack
+                      ? customColor.brownDark
+                      : customColor.blackLight
                   }
                   fontWeight={selectedCategory === props ? 'bold' : 'none'}
                 >
@@ -104,8 +104,8 @@ export const SearchBox = () => {
                     selectedCategory !== '정보'
                       ? customColor.gray
                       : selectedLocation === props
-                      ? customColor.darkBrown
-                      : customColor.lightBlack
+                      ? customColor.brownDark
+                      : customColor.blackLight
                   }
                 >
                   {props}
@@ -129,8 +129,8 @@ export const SearchBox = () => {
                     selectedCategory !== '정보'
                       ? customColor.gray
                       : selectedKinds === props
-                      ? customColor.darkBrown
-                      : customColor.lightBlack
+                      ? customColor.brownDark
+                      : customColor.blackLight
                   }
                 >
                   {props}
@@ -151,7 +151,7 @@ export const SearchBox = () => {
 };
 
 const Container = styled.div`
-  background-color: ${customColor.lightGray};
+  background-color: ${customColor.grayLight};
   display: flex;
   flex-direction: column;
   justify-content: center;
