@@ -7,4 +7,5 @@ export { PhotoCardList } from './photoCardList/PhotoCardList';
 export { FixedButton } from './mainPage/FixedButton';
 export { Notice } from './mainPage/Notice';
 export { Search } from './mainPage/Search';
+export { CustomButton } from './CustomButton';
 
