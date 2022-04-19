@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TypoGraphy } from '../../components/TypoGraphy';
 import { BsPersonCircle } from 'react-icons/bs';
-import { BiDotsVerticalRounded } from 'react-icons/Bi';
+import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { customColor } from 'src/constants';
 
 export const Introduce = () => {
