@@ -4,6 +4,7 @@ import { customColor } from 'src/constants';
 import { NavItem } from './components/NavItem';
 import { VscBell } from 'react-icons/vsc';
 import Link from 'next/link';
+import { CustomButton } from '../CustomButton';
 
 export const Header = () => {
   return (
@@ -21,7 +22,16 @@ export const Header = () => {
           </S.TitleWrapper>
         </Link>
         <S.UpLeftWrapper>
-          <S.WriteButtonWrapper>ButtonWrapper</S.WriteButtonWrapper>
+          <S.WriteButtonWrapper>
+            <Link href={'/editor'} passHref>
+              <CustomButton
+                text="글 작성"
+                width={100}
+                backGroundColor={customColor.orange}
+                height={35}
+              />
+            </Link>
+          </S.WriteButtonWrapper>
           <S.AlertButtonWrapper>
             <VscBell />
           </S.AlertButtonWrapper>

@@ -34,7 +34,6 @@ export const UpLeftWrapper = styled.div`
   margin-right: 30px;
 `;
 export const WriteButtonWrapper = styled.div`
-  background-color: ${customColor.orange};
   margin-right: 20px;
 `;
 export const AlertButtonWrapper = styled.div`

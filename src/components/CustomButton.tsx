@@ -42,7 +42,6 @@ export const CustomButton: React.FC<ButtonProps> = ({
       borderRadius={borderRadius}
       height={height}
     >
-
       <TypoGraphy color={color || customColor.white} fontWeight={'bold'}>
         {text}
       </TypoGraphy>
@@ -55,7 +54,7 @@ const Button = styled.button<ButtonStyledProps>`
 
   height: ${props => props.height || 40}px;
   color: ${customColor.white};
-  background-color: ${props => props.backGroundColor || customColor.darkBrown};
+  background-color: ${props => props.backGroundColor || customColor.brownDark};
   cursor: pointer;
   border-radius: ${props => props.borderRadius || 10}px;
 
