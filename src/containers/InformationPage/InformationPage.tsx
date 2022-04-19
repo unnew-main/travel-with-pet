@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import React from 'react';
-import { FixedButton, Search, Notice, Category } from './components';
-import { PhotoCardList } from 'src/components';
+import { Category } from './components';
+import { FixedButton, Notice, PhotoCardList, Search } from 'src/components';
 import styled from 'styled-components';
 export const InformationPage: NextPage = () => {
   return (

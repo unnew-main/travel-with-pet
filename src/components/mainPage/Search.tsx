@@ -1,9 +1,4 @@
-import React, {
-  ChangeEvent,
-  MutableRefObject,
-  useEffect,
-  useState,
-} from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import Image from 'next/image';
 import { TypoGraphy } from 'src/components';
 import { customColor } from 'src/constants';
