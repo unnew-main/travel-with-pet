@@ -1,4 +1,9 @@
-import React from 'react';
+import React, {
+  ChangeEvent,
+  MutableRefObject,
+  useEffect,
+  useState,
+} from 'react';
 import Image from 'next/image';
 import { TypoGraphy } from 'src/components';
 import { customColor } from 'src/constants';
@@ -6,6 +11,7 @@ import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 import MainPageSearchBG from 'src/assets/image/MainPageSearchBG.jpg';
 import styled from 'styled-components';
 import { Recommend } from './Recommend';
+import { useRef } from 'react';
 
 const RecommendTag = [
   '#서울',
@@ -15,6 +21,15 @@ const RecommendTag = [
   '#강아지 영양제',
 ];
 export const Search = () => {
+  const [search, setSearch] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+  const onReset = () => {
+    setSearch('');
+    inputRef.current!.focus();
+  };
   return (
     <Container>
       <Image
@@ -27,10 +42,10 @@ export const Search = () => {
       />
       <ImageGrayFilter />
       <SearchWrapper>
-        <Input />
+        <Input value={search} onChange={onChange} ref={inputRef} />
         <IconWrapper>
           <AiOutlineSearch fontSize={40} />
-          <AiOutlineClose fontSize={40} />
+          <AiOutlineClose fontSize={40} onClick={onReset} />
         </IconWrapper>
         <RecommendWrapper>
           <TypoGraphy type="h3" color={customColor.white} fontWeight="bold">
