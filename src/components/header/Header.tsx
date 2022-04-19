@@ -31,7 +31,7 @@ export const Header = () => {
         <NavItem pathName={'/information'} customWidth="90">
           정보
         </NavItem>
-        <NavItem pathName={'/daily'} customWidth="140">
+        <NavItem pathName={'/daily'} customWidth="90">
           일상
         </NavItem>
         <NavItem pathName={'/mypage'} customWidth="100">
