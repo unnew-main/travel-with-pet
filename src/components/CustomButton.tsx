@@ -27,7 +27,6 @@ type ButtonStyledProps = {
 export const CustomButton: React.FC<ButtonProps> = ({
   text,
   width,
-
   height,
   color,
   backGroundColor,
