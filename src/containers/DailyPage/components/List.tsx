@@ -13,5 +13,4 @@ export function List() {
 
 const Container = styled.div`
   margin-top: 40px;
-  overflow-y: hidden;
 `;

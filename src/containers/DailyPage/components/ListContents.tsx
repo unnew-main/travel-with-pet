@@ -1,56 +1,59 @@
 import React from 'react'
 import { TypoGraphy } from 'src/components';
 import styled from 'styled-components';
+import {dailyListInfo} from 'src/dummy/dailyInfo';
+import { AiOutlinePicture } from 'react-icons/ai';
+import { customColor } from 'src/constants';
 
 export default function ListContents() {
+  
   return (
-    <Container>
-      <ListWrapper>
-        <LeftWrapper>
-          <LikeWrapper>
-            <TypoGraphy type="body1" fontWeight="bold">
-              32
-            </TypoGraphy>
-          </LikeWrapper>
-          <TitleWrapper>
-            <TypoGraphy type="body1" fontWeight="bold">
-              제목 아무거나 뭐시기 테스트
-            </TypoGraphy>
-            <TypoGraphy type="body1" fontWeight="bold">
-              태그 테스트
-            </TypoGraphy>
-          </TitleWrapper>
-        </LeftWrapper>
-        <RightWrapper>
-          <TextWrapper>
-            <TypoGraphy type="body1" fontWeight="bold">
-              ㅁ
-            </TypoGraphy>
-          </TextWrapper>
-          <TextWrapper>
-            <TypoGraphy type="body1" fontWeight="bold">
-              ㅇ
-            </TypoGraphy>
-          </TextWrapper>
-          <TextWrapper>
-            <TypoGraphy type="body1" fontWeight="bold">
-              김가나다
-            </TypoGraphy>
-          </TextWrapper>
-          <TextWrapper>
-            <TypoGraphy type="body1" fontWeight="bold">
-              2020-20-20
-            </TypoGraphy>
-          </TextWrapper>
-        </RightWrapper>
-      </ListWrapper>
-    </Container>
+    <>
+      {dailyListInfo.map(data => (
+        <ListWrapper key={data.id}>
+          <LeftWrapper>
+            <LikeWrapper>
+              <TypoGraphy type="body1" fontWeight="bold">
+                {data.Like}
+              </TypoGraphy>
+            </LikeWrapper>
+            <TitleWrapper>
+              <TypoGraphy type="body1" fontWeight="bold">
+                {data.Title}
+              </TypoGraphy>
+              <TypoGraphy type="body1" fontWeight="bold">
+                태그는 아직
+              </TypoGraphy>
+            </TitleWrapper>
+          </LeftWrapper>
+          <RightWrapper>
+            <TextWrapper>
+              <TypoGraphy type="body1" fontWeight="bold">
+                {data.ImageUrl ? <AiOutlinePicture fontSize={28} /> : ''}
+              </TypoGraphy>
+            </TextWrapper>
+            <TextWrapper>
+              <TypoGraphy type="body1" fontWeight="bold">
+                {data.Comment}
+              </TypoGraphy>
+            </TextWrapper>
+            <TextWrapper>
+              <TypoGraphy type="body1" fontWeight="bold">
+                {data.Writer}
+              </TypoGraphy>
+            </TextWrapper>
+            <TextWrapper>
+              <TypoGraphy type="body1" fontWeight="bold">
+                {data.Date}
+              </TypoGraphy>
+            </TextWrapper>
+          </RightWrapper>
+        </ListWrapper>
+      ))}
+    </>
   );
 }
 
-const Container = styled.div`
-  height: 60px;
-`;
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -60,6 +63,7 @@ const ListWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  border-bottom: 1px solid ${customColor.gray};
 `;
 
 const LeftWrapper = styled.div`
@@ -75,6 +79,7 @@ const TextWrapper = styled.div`
   width: 140px;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 const LikeWrapper = styled.div`
   display: flex;
@@ -82,3 +87,4 @@ const LikeWrapper = styled.div`
   width: 80px;
   margin-right: 20px;
 `;
+
