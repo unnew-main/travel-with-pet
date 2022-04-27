@@ -15,7 +15,7 @@ export const DetailBody = () => {
           <IconWrapper>
             <BsHeart />
           </IconWrapper>
-          <TypoGraphy type="body1" color={customColor.gray}>
+          <TypoGraphy type="body3" color={customColor.gray}>
             추천하기
           </TypoGraphy>
         </GoodButton>
