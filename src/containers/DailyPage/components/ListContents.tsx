@@ -4,9 +4,14 @@ import styled from 'styled-components';
 import {dailyListInfo} from 'src/dummy/dailyInfo';
 import { AiOutlinePicture } from 'react-icons/ai';
 import { customColor } from 'src/constants';
+import { Tag } from './Tag';
 
 export default function ListContents() {
   
+  const formatDate = (date:Date) => {
+    const formattedDate = [date.getFullYear(), date.getMonth()+1, date.getDate()].join('-');
+    return formattedDate;
+  }
   return (
     <>
       {dailyListInfo.map(data => (
@@ -17,14 +22,14 @@ export default function ListContents() {
                 {data.Like}
               </TypoGraphy>
             </LikeWrapper>
-            <TitleWrapper>
-              <TypoGraphy type="body1" fontWeight="bold">
-                {data.Title}
-              </TypoGraphy>
-              <TypoGraphy type="body1" fontWeight="bold">
-                태그는 아직
-              </TypoGraphy>
-            </TitleWrapper>
+            <TitleContainer>
+              <TitleWrapper>
+                <TypoGraphy type="body1" fontWeight="bold">
+                  {data.Title}
+                </TypoGraphy>
+              </TitleWrapper>
+              <Tag Tags={data.Tags} />
+            </TitleContainer>
           </LeftWrapper>
           <RightWrapper>
             <TextWrapper>
@@ -44,7 +49,7 @@ export default function ListContents() {
             </TextWrapper>
             <TextWrapper>
               <TypoGraphy type="body1" fontWeight="bold">
-                {data.Date}
+                {formatDate(data.Date)}
               </TypoGraphy>
             </TextWrapper>
           </RightWrapper>
@@ -54,9 +59,18 @@ export default function ListContents() {
   );
 }
 
-const TitleWrapper = styled.div`
+const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 400px;
+`;
+const TitleWrapper = styled.div`
+  div {
+    width: 400px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 `;
 const ListWrapper = styled.div`
   display: flex;

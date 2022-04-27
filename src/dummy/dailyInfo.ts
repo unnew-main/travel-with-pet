@@ -4,7 +4,7 @@ export type DailyListInfoType = {
   Like: number;
   Title: string;
   Writer: string;
-  Date: string;
+  Date: Date;
   Comment: number;
   Tags: string[];
 };
@@ -13,9 +13,10 @@ export const dailyListInfo: DailyListInfoType[] = [
     id: 123,
     ImageUrl: 'favicon.ico',
     Like: 12,
-    Title: '제목 테스트 해야함 너무 길면 잘라야함.(구현중)',
+    Title:
+      '제목 테스트 해야함 너무 길면 잘라야함. 잘라지나확인해보자@@@@@@@@@@@@',
     Writer: '글쓴이닉네임',
-    Date: "2022-04-27",
+    Date: new Date(),
     Comment: 12,
     Tags: [
       '#인천',
@@ -29,7 +30,7 @@ export const dailyListInfo: DailyListInfoType[] = [
     Like: 12,
     Title: '제목 테스트 해야함 너무 길면 잘라야함.(구현중)',
     Writer: '글쓴이닉네임',
-    Date: "2022-04-27",
+    Date: new Date(),
     Comment: 12,
     Tags: [
       '#인천',
@@ -43,7 +44,7 @@ export const dailyListInfo: DailyListInfoType[] = [
     Like: 12,
     Title: '제목 테스트 해야함 너무 길면 잘라야함.(구현중)',
     Writer: '글쓴이닉네임',
-    Date: "2022-04-27",
+    Date: new Date(),
     Comment: 12,
     Tags: [
       '#인천',
@@ -57,7 +58,7 @@ export const dailyListInfo: DailyListInfoType[] = [
     Like: 12,
     Title: '제목 테스트 해야함 너무 길면 잘라야함.(구현중)',
     Writer: '글쓴이닉네임',
-    Date: "2022-04-27",
+    Date: new Date(),
     Comment: 12,
     Tags: [
       '#인천',
@@ -71,7 +72,7 @@ export const dailyListInfo: DailyListInfoType[] = [
     Like: 12,
     Title: '제목 테스트 해야함 너무 길면 잘라야함.(구현중)',
     Writer: '글쓴이닉네임',
-    Date: "2022-04-27",
+    Date: new Date(),
     Comment: 12,
     Tags: [
       '#인천',
@@ -85,7 +86,7 @@ export const dailyListInfo: DailyListInfoType[] = [
     Like: 12,
     Title: '제목 테스트 해야함 너무 길면 잘라야함.(구현중)',
     Writer: '글쓴이닉네임',
-    Date: "2022-04-27",
+    Date: new Date(),
     Comment: 12,
     Tags: [
       '#인천',
@@ -99,7 +100,7 @@ export const dailyListInfo: DailyListInfoType[] = [
     Like: 12,
     Title: '제목 테스트 해야함 너무 길면 잘라야함.(구현중)',
     Writer: '글쓴이닉네임',
-    Date: "2022-04-27",
+    Date: new Date(),
     Comment: 12,
     Tags: [
       '#인천',
