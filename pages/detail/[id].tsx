@@ -1,7 +1,9 @@
 import type { NextPage } from 'next';
 import { DetailPage } from 'src/containers/detail/DetailPage';
 
-const Detail: NextPage = ({ id }) => {
+type Props = { id: number };
+
+const Detail: NextPage<Props> = ({ id }) => {
   return <DetailPage id={id} />;
 };
 
