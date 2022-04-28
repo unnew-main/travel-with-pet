@@ -1,4 +1,4 @@
-export { Introduce } from './Introduce';
-export { MyComments } from './MyComments';
-export { MyLikes } from './MyLikes';
-export { MyPosts } from './MyPosts';
+export { Introduce } from './components/Introduce';
+export { MyComments } from './components/MyComments';
+export { MyLikes } from './components/MyLikes';
+export { MyPosts } from './components/MyPosts';

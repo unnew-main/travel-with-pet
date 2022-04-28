@@ -1,19 +1,18 @@
 import React from 'react';
-import { PhotoCardList } from 'src/components';
-import styled from 'styled-components';
-import { TypoGraphy } from '../../components/TypoGraphy';
 import { customColor } from 'src/constants';
+import styled from 'styled-components';
+import { TypoGraphy } from '../../../components/TypoGraphy';
+import { FaHeart } from 'react-icons/fa';
 
-export const MyPosts = () => {
+export const MyComments = () => {
   return (
     <>
       <Hr />
       <Text>
         <TypoGraphy type="h1" fontWeight="bold">
-          내가 작성한 글
+          내가 작성한 댓글
         </TypoGraphy>
       </Text>
-
       <Category>
         <TextCategory>
           <TypoGraphy
@@ -30,8 +29,20 @@ export const MyPosts = () => {
           </TypoGraphy>
         </TextCategory>
       </Category>
-
-      <PhotoCardList type="MyPage" />
+      <FaHeart color="red" />
+      <TypoGraphy>23</TypoGraphy>
+      <Hr2 />
+      <FaHeart color="red" />
+      <TypoGraphy>23</TypoGraphy>
+      <Hr2 />
+      <FaHeart color="red" />
+      <TypoGraphy>23</TypoGraphy>
+      <Hr2 />
+      <FaHeart color="red" />
+      <TypoGraphy>23</TypoGraphy>
+      <Hr2 />
+      <FaHeart color="red" />
+      <TypoGraphy>23</TypoGraphy>
     </>
   );
 };
@@ -40,6 +51,10 @@ const Hr = styled.hr`
   margin-top: 80px;
   width: 1178px;
   background-color: #c4c4c4;
+`;
+
+const Hr2 = styled.hr`
+  width: 960px;
 `;
 
 const Text = styled.div`
