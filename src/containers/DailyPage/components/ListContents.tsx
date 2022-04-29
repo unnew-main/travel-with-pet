@@ -38,8 +38,8 @@ export default function ListContents() {
               </TypoGraphy>
             </TextWrapper>
             <TextWrapper>
-              <TypoGraphy type="body1" fontWeight="bold">
-                {data.Comment}
+              <TypoGraphy type="body1" fontWeight="bold" color={customColor.brownDark}>
+                ({data.Comment})
               </TypoGraphy>
             </TextWrapper>
             <TextWrapper>
@@ -63,6 +63,7 @@ const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 400px;
+  gap: 4px 0;
 `;
 const TitleWrapper = styled.div`
   div {

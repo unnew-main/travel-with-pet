@@ -10,7 +10,7 @@ export function TitleAndFilter({ filter, setFilter }: Props) {
   return (
     <TitleWrapper>
       <TypoGraphy type="Title" fontWeight="bold">
-        모두의 이야기
+        일상
       </TypoGraphy>
       <FilterContainer>
         <FilterWrapper onClick={() => setFilter('최신순')}>
