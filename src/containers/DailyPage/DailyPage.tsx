@@ -3,6 +3,7 @@ import { FixedButton, Notice, Search } from 'src/components';
 import styled from 'styled-components';
 import { List } from './components/List';
 import { TitleAndFilter } from './components/TitleAndFilter';
+
 export function DailyPage() {
   const [filter, setFilter] = useState('최신순');
 
