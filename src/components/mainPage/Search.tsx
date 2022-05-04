@@ -7,6 +7,7 @@ import MainPageSearchBG from 'src/assets/image/MainPageSearchBG.jpg';
 import styled from 'styled-components';
 import { Recommend } from './Recommend';
 import { useRef } from 'react';
+import { useRouter } from 'next/router';
 
 const RecommendTag = [
   '#서울',
@@ -17,9 +18,21 @@ const RecommendTag = [
 ];
 export const Search = () => {
   const [search, setSearch] = useState('');
+  const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
+  };
+  const onSearch = () => {
+    router.push(
+      {
+        pathname: `/search`,
+        query: {
+          search,
+        },
+      },
+      '/search',
+    );
   };
   const onReset = () => {
     setSearch('');
@@ -39,7 +52,7 @@ export const Search = () => {
       <SearchWrapper>
         <Input value={search} onChange={onChange} ref={inputRef} />
         <IconWrapper>
-          <AiOutlineSearch fontSize={40} />
+          <AiOutlineSearch fontSize={40} onClick={onSearch} />
           <AiOutlineClose fontSize={40} onClick={onReset} />
         </IconWrapper>
         <RecommendWrapper>
