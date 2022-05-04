@@ -13,7 +13,6 @@ export const MyLikes = () => {
           내가 좋아요한 글
         </TypoGraphy>
       </Text>
-
       <Category>
         <TextCategory>
           <TypoGraphy

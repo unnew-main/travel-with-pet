@@ -13,7 +13,6 @@ export const MyPosts = () => {
           내가 작성한 글
         </TypoGraphy>
       </Text>
-
       <Category>
         <TextCategory>
           <TypoGraphy
@@ -30,7 +29,6 @@ export const MyPosts = () => {
           </TypoGraphy>
         </TextCategory>
       </Category>
-
       <PhotoCardList type="MyPage" />
     </>
   );
