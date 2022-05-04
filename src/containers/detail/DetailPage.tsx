@@ -1,5 +1,5 @@
 import * as S from './DetailPage.style';
-import { DetailBody, DetailHeader, Comment } from './components';
+import { DetailBody, DetailHeader, CommentList } from './components';
 import { photoCardInfo as dummyPhotoData } from 'src/dummy/photoCardInfo';
 import { comments } from 'src/dummy/comments';
 type Props = {
@@ -17,7 +17,7 @@ export const DetailPage = ({ id }: Props) => {
     <S.Container>
       <DetailHeader detailData={dummyData} />
       <DetailBody />
-      <Comment data={comments} />
+      <CommentList data={comments} />
     </S.Container>
   );
 };

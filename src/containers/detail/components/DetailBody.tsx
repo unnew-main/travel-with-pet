@@ -45,7 +45,7 @@ const ContentWrapper = styled.div`
 const GoodButtonWrapper = styled.div`
   margin-top: 100px;
 `;
-const GoodButton = styled.div`
+const GoodButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +54,8 @@ const GoodButton = styled.div`
   border-radius: 9999px;
   width: 100px;
   height: 100px;
+  background-color: ${customColor.white};
+
   :hover {
     cursor: pointer;
     background-color: ${customColor.grayLight};
