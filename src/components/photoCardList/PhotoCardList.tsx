@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PhotoCard } from './components';
-import { PhotoCardInfoType } from 'src/constants/photoCardType';
+import { PhotoCardInfoType } from 'src/constants/photoCard.type';
 
 
 type Props = {

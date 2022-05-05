@@ -1,4 +1,4 @@
-import { PhotoCardInfoType } from "src/constants/photoCardType";
+import { PhotoCardInfoType } from "src/constants/photoCard.type";
 let id = 1;
 let Like = 1;
 export const photoCardInfo: PhotoCardInfoType[] = [

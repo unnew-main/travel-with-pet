@@ -1,7 +1,7 @@
 import React from 'react';
 import { Info, Tag } from './index';
 import styled from "styled-components";
-import { PhotoCardInfoType } from 'src/constants/photoCardType';
+import { PhotoCardInfoType } from 'src/constants/photoCard.type';
 type Props = {
   data: PhotoCardInfoType;
 };
