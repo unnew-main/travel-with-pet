@@ -1,13 +1,13 @@
 import React from 'react';
 import { Info, Tag } from './index';
-import { PhotoCardInfoType } from 'src/dummy/photoCardInfo';
 import styled from "styled-components";
+import { PhotoCardInfoType } from 'src/constants/photoCardType';
 type Props = {
-  photoCardInfo: PhotoCardInfoType;
+  data: PhotoCardInfoType;
 };
-export const PhotoCard = ({ photoCardInfo }: Props) => {
+export const PhotoCard = ({ data }: Props) => {
   const { ImageUrl, Area, Like, Text, Writer, Date, Tags }: PhotoCardInfoType =
-    photoCardInfo;
+    data;
   return (
     <Container>
       <ImageWrapper ImageUrl={ImageUrl} />

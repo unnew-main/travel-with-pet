@@ -1,17 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PhotoCard } from './components';
-import { photoCardInfo } from 'src/dummy/photoCardInfo';
+import { PhotoCardInfoType } from 'src/constants/photoCardType';
+
 
 type Props = {
   type: 'MainPage' | 'MyPage';
+  photoCardInfo: PhotoCardInfoType[];
 };
 
-export function PhotoCardList({ type }: Props) {
+export function PhotoCardList({ type, photoCardInfo }: Props) {
   return (
     <Wrapper type={type}>
-      {photoCardInfo.map((data, index) => (
-        <PhotoCard key={index} photoCardInfo={data} />
+      {photoCardInfo.map((data) => (
+        <PhotoCard key={data.id} data={data} />
       ))}
     </Wrapper>
   );
