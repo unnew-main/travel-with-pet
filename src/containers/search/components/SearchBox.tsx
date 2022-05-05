@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TypoGraphy } from 'src/components';
+import { CustomButton, TypoGraphy } from 'src/components';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 
@@ -144,7 +144,9 @@ export const SearchBox = () => {
         </BodyListWrapper>
       </UpperWrapper>
       <DownWrapper>
-        <ButtonWrapper>Button</ButtonWrapper>
+        <ButtonWrapper>
+          <CustomButton text={'검색'} width={120} />
+        </ButtonWrapper>
       </DownWrapper>
     </Container>
   );
@@ -159,12 +161,14 @@ const Container = styled.div`
   width: 80%;
   height: 250px;
   border-radius: 10px;
+  margin-bottom: 20px;
 `;
 
 const UpperWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
   width: 95%;
   height: 70%;
 `;
