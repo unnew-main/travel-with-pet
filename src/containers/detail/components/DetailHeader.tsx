@@ -37,7 +37,7 @@ export const DetailHeader = ({ detailData }: DetailHeader) => {
           </TypoGraphy>
         </Info>
         <Info>
-          <IconWrapper color="#e64d3b">
+          <IconWrapper color={customColor.red}>
             <AiFillHeart />
           </IconWrapper>
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">

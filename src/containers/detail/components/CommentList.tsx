@@ -73,10 +73,12 @@ const TitleWrapper = styled.div`
   justify-content: center;
   align-items: flex-end;
 `;
-const ReportWrapper = styled.div`
+const ReportWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  border: none;
+  background: none;
   :hover {
     cursor: pointer;
     div {

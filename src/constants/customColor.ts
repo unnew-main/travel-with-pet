@@ -8,4 +8,5 @@ export const customColor = {
   grayLight: '#ECECEC',
   black: '#000000',
   blackLight: '#535353',
+  red: '#e64d3b',
 };
