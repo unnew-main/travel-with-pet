@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import { TypoGraphy } from 'src/components';
+import { FixedButton, Notice, Search, TypoGraphy } from 'src/components';
 import styled from 'styled-components';
 export default function InformationViewMore() {
   const router = useRouter();
@@ -18,7 +18,12 @@ export default function InformationViewMore() {
   };
   return (
     <Container>
-      <TypoGraphy type='Title'>{category()}</TypoGraphy>
+      <Search />
+      <Notice />
+      <CategoryWrapper>
+        <TypoGraphy type='Title' fontWeight='bold'>{category()}</TypoGraphy>
+      </CategoryWrapper>
+      <FixedButton />
     </Container>
   );
 }
@@ -31,4 +36,12 @@ const Container = styled.div`
   justify-content: center;
   margin-bottom: 200px;
   overflow-x: hidden;
+`;
+
+const CategoryWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+  width: 1178px;
 `;
