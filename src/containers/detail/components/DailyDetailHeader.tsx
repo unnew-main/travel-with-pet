@@ -1,27 +1,30 @@
 import { TypoGraphy } from 'src/components';
 import { Tag } from 'src/components/photoCardList/components';
 import { customColor } from 'src/constants';
-import { PhotoCardInfoType } from 'src/dummy/photoCardInfo';
 import styled from 'styled-components';
 import { AiFillHeart } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
 
-type DetailHeader = {
-  detailData: PhotoCardInfoType & { detailArea: string } & { View: number };
+type Props = {
+  detailData: {
+    ImageUrl: string;
+    Title: string;
+    Like: number;
+    Text: string;
+    Writer: string;
+    Date: string;
+    Tags: string[];
+    View: number;
+  };
 };
-export const DetailHeader = ({ detailData }: DetailHeader) => {
+export const DailyDetailHeader = ({ detailData }: Props) => {
   return (
     <Container>
-      <Area>
-        <TypoGraphy type="Title" color={customColor.orange} fontWeight="bold">
-          {detailData.Area}
+      <TitleWrapper>
+        <TypoGraphy type="Title" color={customColor.black} fontWeight="bold">
+          {detailData.Title}
         </TypoGraphy>
-      </Area>
-      <DetailArea>
-        <TypoGraphy type="h3" color={customColor.black} fontWeight="bold">
-          {detailData.detailArea}
-        </TypoGraphy>
-      </DetailArea>
+      </TitleWrapper>
       <TagWrapper>
         <Tag Tags={detailData.Tags} />
       </TagWrapper>
@@ -69,8 +72,7 @@ const Container = styled.div`
   padding-bottom: 20px;
   border-bottom: 1px solid ${customColor.gray};
 `;
-const Area = styled.div``;
-const DetailArea = styled.div``;
+const TitleWrapper = styled.div``;
 const TagWrapper = styled.div``;
 
 const InfoWrapper = styled.div`

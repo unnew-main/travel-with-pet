@@ -4,10 +4,15 @@ import styled from 'styled-components';
 import { AiOutlineAlert } from 'react-icons/ai';
 import { CommentsType } from 'src/dummy/comments';
 import { Comment } from './';
+import { useState } from 'react';
+
 type Props = {
   data: CommentsType[];
 };
 export const CommentList = ({ data }: Props) => {
+  const [activePage, setActivePage] = useState(0);
+  const [perPage, setPerPage] = useState(3);
+  const [totalPage, setTotlePage] = useState(4);
   const handleReportButton = () => {};
 
   return (
@@ -29,17 +34,18 @@ export const CommentList = ({ data }: Props) => {
       </HeaderWrapper>
       <Line />
 
-      <BodyWrapper>
+      <CommentWrapper>
         {data.map(data => (
           <Comment key={data.id} data={data} />
         ))}
-      </BodyWrapper>
-      <ButtomWrapper>
+      </CommentWrapper>
+
+      <InputWrapper>
         <Input />
         <ButtonWrapper>
           <CustomButton text="댓글작성" width={130} />
         </ButtonWrapper>
-      </ButtomWrapper>
+      </InputWrapper>
     </Container>
   );
 };
@@ -96,32 +102,34 @@ const IconWrapper = styled.div`
   margin-right: 5px;
 `;
 
-const BodyWrapper = styled.div`
+const CommentWrapper = styled.div`
   width: 100%;
   max-width: 1178px;
 `;
+
 // -------------------Bottom---------------------------
-const ButtomWrapper = styled.div`
+const InputWrapper = styled.div`
   width: 100%;
   max-width: 1178px;
   margin-top: 100px;
   margin-bottom: 100px;
 `;
 
-const Input = styled.input`
+const Input = styled.textarea`
   width: 100%;
   height: 100px;
   box-sizing: border-box;
   border: 2px solid ${customColor.gray};
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
+  resize: none;
   :focus {
     outline: none;
     border-color: ${customColor.brownDark};
   }
 `;
 const ButtonWrapper = styled.div`
-  margin-top: 20px;
+  margin-top: 12px;
   display: flex;
   justify-content: flex-end;
   align-items: center;

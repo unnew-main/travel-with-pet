@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
-import { DetailPage } from 'src/containers/detail/DetailPage';
+import { DailyDetailPage } from 'src/containers/detail/DailyDetailPage';
 
 type Props = { id: number };
 
-const Detail: NextPage<Props> = ({ id }) => {
-  return <DetailPage id={id} />;
+const DailyDetail: NextPage<Props> = ({ id }) => {
+  return <DailyDetailPage id={id} />;
 };
 
 export async function getServerSideProps(context: { query: { id: number } }) {
@@ -16,4 +16,4 @@ export async function getServerSideProps(context: { query: { id: number } }) {
   return { props: { id } };
 }
 
-export default Detail;
+export default DailyDetail;
