@@ -5,14 +5,10 @@ import { dailyListInfo } from 'src/dummy/dailyInfo';
 import { AiOutlinePicture } from 'react-icons/ai';
 import { customColor } from 'src/constants';
 import { Tag } from './Tag';
-import Pagination from 'react-js-pagination';
+import { CustomPagination } from 'src/components/CustomPagination';
 
 export default function ListContents() {
   const [activePage, setActivePage] = useState<number>(1);
-
-  const handlePageChange = (pageNumber: number) => {
-    setActivePage(pageNumber);
-  };
 
   const formatDate = (date: Date) => {
     const formattedDate = [
@@ -73,19 +69,12 @@ export default function ListContents() {
             </ListWrapper>
           );
       })}
-      <PaginationWrapper>
-        <Pagination
-          activePage={activePage}
-          itemsCountPerPage={10}
-          totalItemsCount={80}
-          pageRangeDisplayed={4}
-          prevPageText="<"
-          nextPageText=">"
-          firstPageText="<<"
-          lastPageText=">>"
-          onChange={e => handlePageChange(e)}
-        />
-      </PaginationWrapper>
+      <CustomPagination
+        activePage={activePage}
+        itemsCountPerPage={10}
+        totalItemsCount={80}
+        onChange={e => setActivePage(e)}
+      />
     </>
   );
 }
@@ -132,41 +121,4 @@ const LikeWrapper = styled.div`
   justify-content: center;
   width: 80px;
   margin-right: 20px;
-`;
-
-const PaginationWrapper = styled.div`
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    font-size: 20px;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  ul.pagination li {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  ul.pagination li a {
-    text-decoration: none;
-    color: ${customColor.gray};
-  }
-
-  ul.pagination li:nth-child(-n + 2) a {
-    color: ${customColor.black};
-  }
-  ul.pagination li:nth-child(n + 7) a {
-    color: ${customColor.black};
-  }
-
-  ul.pagination li a:hover,
-  ul.pagination li.active a {
-    color: ${customColor.brownDark};
-  }
 `;
