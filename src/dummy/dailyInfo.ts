@@ -10,6 +10,7 @@ export type DailyListInfoType = {
 };
 let id = 1;
 let Like = 1;
+export const totalItemsCount = 80;
 export const dailyListInfo: DailyListInfoType[] = [
   // 80개 만들어놨음
   {

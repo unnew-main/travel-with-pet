@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TypoGraphy } from 'src/components';
 import styled from 'styled-components';
-import { dailyListInfo } from 'src/dummy/dailyInfo';
+import { dailyListInfo, totalItemsCount } from 'src/dummy/dailyInfo';
 import { AiOutlinePicture } from 'react-icons/ai';
 import { customColor } from 'src/constants';
 import { Tag } from './Tag';
@@ -72,7 +72,7 @@ export default function ListContents() {
       <CustomPagination
         activePage={activePage}
         itemsCountPerPage={10}
-        totalItemsCount={80}
+        totalItemsCount={totalItemsCount}
         onChange={e => setActivePage(e)}
       />
     </>
