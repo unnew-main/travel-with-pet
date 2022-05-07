@@ -3,7 +3,7 @@ import React from 'react';
 import { Category } from './components';
 import { FixedButton, Notice, PhotoCardList, Search } from 'src/components';
 import styled from 'styled-components';
-import { photoCardInfo } from 'src/dummy/photoCardInfo';
+import { photoCardInfo, totalItemsCount } from 'src/dummy/photoCardInfo';
 export const InformationPage: NextPage = () => {
   return (
     <Container>
