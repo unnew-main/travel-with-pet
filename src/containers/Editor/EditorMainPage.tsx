@@ -2,21 +2,45 @@ import { Seo } from 'src/components';
 import { customColor } from 'src/constants/customColor';
 import styled from 'styled-components';
 import dynamic from 'next/dynamic';
-import React, { useState } from 'react';
+import React, { useState, MutableRefObject } from 'react';
 import { ButtonBox, ToggleBox, InformationForm } from './components';
+import { forwardRef } from 'react';
+import { useRef } from 'react';
+
+import { EditorProps, Editor as EditorType } from '@toast-ui/react-editor';
+import { TuiWithForwardedRefProps } from './components/EditorForm';
 
 type Selected = {
   name: string;
   value: string;
 };
 
-export const EditorMainPage: React.FC = () => {
-  const EditorFormComponent = dynamic(() => import('./components/EditorForm'), {
+const EditorFormComponent = dynamic<TuiWithForwardedRefProps>(
+  () => import('./components/EditorForm'),
+  {
     ssr: false,
-  });
+  },
+);
 
+const EditorWithForwardRef = React.forwardRef<
+  EditorType | undefined,
+  EditorProps
+>((props, ref) => (
+  <EditorFormComponent
+    {...props}
+    forwardedRef={ref as MutableRefObject<EditorType>}
+  />
+));
+
+EditorWithForwardRef.displayName = 'EditorWithForwardRef';
+
+interface ToastUiEditorProps extends EditorProps {
+  forwardedRef: MutableRefObject<EditorType | undefined>;
+}
+
+export const EditorMainPage: React.FC = () => {
   const [choose, setChoose] = useState('information');
-
+  const editorRef = useRef<EditorType>(null);
   const [selectedCategory, setSelectedCategory] = useState<Selected>({
     name: '여행',
     value: 'trip',
@@ -45,8 +69,8 @@ export const EditorMainPage: React.FC = () => {
       <Hr />
       <Input placeholder="#태그 #입력 #인천" />
       <Hr />
-      <EditorFormComponent />
       <ButtonBox />
+      <EditorWithForwardRef ref={editorRef} />
     </Wrapper>
   );
 };
