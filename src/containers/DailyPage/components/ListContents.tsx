@@ -69,7 +69,6 @@ export default function ListContents() {
             </ListWrapper>
           );
       })}
-      {console.log(totalItemsCount)}
       <CustomPagination
         activePage={activePage}
         itemsCountPerPage={10}
