@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 import { EditorMainPage } from "src/containers/index";
 
 const Editor: NextPage = () => {

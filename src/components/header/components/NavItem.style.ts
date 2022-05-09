@@ -27,3 +27,7 @@ export const NavWrapper = styled.div<{ customWidth: string }>`
     opacity: 100;
   }
 `;
+
+export const A = styled.a`
+  text-decoration: none;
+`;

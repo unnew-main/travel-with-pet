@@ -7,7 +7,7 @@ export const Container = styled.div`
   background-color: ${customColor.grayLight};
 `;
 export const Wrapper = styled.div`
-  width: 80%;
+  max-width: 1178px;
   height: 100%;
   margin: auto;
 `;
@@ -15,6 +15,7 @@ export const UpFooter = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  width: 100%;
   height: 60%;
   padding-top: 20px;
   padding-left: 20px;
@@ -23,6 +24,8 @@ export const UpFooter = styled.div`
 
 export const DownFooter = styled.div`
   border-top: 1px solid ${customColor.gray};
+  width: 100%;
+
   height: 40%;
   display: flex;
   justify-content: space-between;

@@ -1,9 +1,9 @@
-import { Editor } from "@toast-ui/react-editor";
-import React, { useRef } from "react";
-import "@toast-ui/editor/dist/toastui-editor.css";
+import { Editor } from '@toast-ui/react-editor';
+import React, { useRef } from 'react';
+import '@toast-ui/editor/dist/toastui-editor.css';
 
-const MyComponent = () => {
-  const editRef = useRef();
+function EditorForm(): JSX.Element {
+  const editRef = useRef<any>();
 
   return (
     <Editor
@@ -12,8 +12,9 @@ const MyComponent = () => {
       height="800px"
       initialEditType="markdown"
       useCommandShortcut={true}
-      // ref={editRef}
+      ref={editRef}
     />
   );
-};
-export default MyComponent;
+}
+
+export default EditorForm;
