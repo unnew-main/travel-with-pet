@@ -8,7 +8,6 @@ import '@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-sy
 import colorSyntax, {
   PluginOptions,
 } from '@toast-ui/editor-plugin-color-syntax';
-import { Console } from 'console';
 
 window.Buffer = window.Buffer || require('buffer').Buffer;
 
@@ -24,22 +23,26 @@ const EditorForm: React.FC<TuiWithForwardedRefProps> = props => {
   useEffect(() => {
     if (forwardedRef.current) {
       forwardedRef.current.getInstance().removeHook('addImageBlobHook');
-      // forwardedRef.current
-      //   .getInstance()
-      //   .addHook('addImageBlobHook', (blob, callback) => {
-      //     const s3config = {
-      //       bucketName: process.env.S3_BUCKET_NAME as string,
-      //       region: process.env.S3_REGION as string,
-      //       accessKeyId: process.env.S3_ACCESS_ID as string,
-      //       secretAccessKey: process.env.S3_ACCESS_KEY as string,
-      //     };
 
-      //     const ReactS3Client = new S3(s3config);
+      forwardedRef.current
+        .getInstance()
+        .addHook('addImageBlobHook', (blob, callback) => {
+          const s3config = {
+            bucketName: process.env.S3_BUCKET_NAME as string,
+            region: process.env.S3_REGION as string,
+            accessKeyId: process.env.S3_ACCESS_ID as string,
+            secretAccessKey: process.env.S3_ACCESS_KEY as string,
+          };
 
-      //     ReactS3Client.uploadFile(blob, uuidv4())
-      //       .then(data => callback(data.location, 'imageURL'))
-      //       .catch(err => (window.location.href = '/error'));
-      //   });
+          const ReactS3Client = new S3(s3config);
+
+          ReactS3Client.uploadFile(blob, uuidv4())
+            // .then(data => callback(data.location, 'imageURL'))
+            .then(data => {
+              console.log(typeof data);
+            })
+            .catch(err => console.log(err));
+        });
     }
   }, []);
 
