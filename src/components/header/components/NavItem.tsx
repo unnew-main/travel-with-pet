@@ -14,15 +14,17 @@ export const NavItem = ({ pathName, children, customWidth }: NavItem) => {
   return (
     <Link href={pathName} passHref>
       <S.NavWrapper customWidth={customWidth}>
-        <TypoGraphy
-          type="body1"
-          color={customColor.white}
-          fontWeight={router.pathname === pathName ? 'bold' : ''}
-        >
-          {children}
-        </TypoGraphy>
+        <S.A>
+          <TypoGraphy
+            type="body1"
+            color={customColor.white}
+            fontWeight={router.pathname === pathName ? 'bold' : ''}
+          >
+            {children}
+          </TypoGraphy>
+        </S.A>
 
-        <S.UnderBar isActive={router.pathname === pathName ? true : false} />
+        <S.UnderBar isActive={router.pathname.includes(pathName)} />
       </S.NavWrapper>
     </Link>
   );
