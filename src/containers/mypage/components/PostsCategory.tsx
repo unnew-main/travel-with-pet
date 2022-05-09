@@ -1,17 +1,24 @@
-import React from 'react';
-import { PhotoCardList } from 'src/components';
+import { TypoGraphy } from 'src/components';
 import styled from 'styled-components';
-import { TypoGraphy } from '../../../components/TypoGraphy';
 import { customColor } from 'src/constants';
-import { photoCardInfo } from 'src/dummy/photoCardInfo';
+import { useState } from 'react';
+import { RuleTester } from 'eslint';
 
-export const MyPosts = () => {
+export const PostsCategory = ({ children }) => {
+  const [tabState, setTabState] = useState({
+    tabInfo: true,
+    tabOurStory: false,
+  });
+
+  const tabHandler = () => {
+    setTabState(!tabState);
+  };
   return (
     <>
       <Hr />
       <Text>
         <TypoGraphy type="h1" fontWeight="bold">
-          내가 작성한 글
+          내가 작성한 댓글{children}
         </TypoGraphy>
       </Text>
       <Category>
@@ -30,7 +37,6 @@ export const MyPosts = () => {
           </TypoGraphy>
         </TextCategory>
       </Category>
-      <PhotoCardList type="MyPage" photoCardInfo={photoCardInfo} />
     </>
   );
 };
@@ -45,14 +51,15 @@ const Text = styled.div`
   padding: 24px;
 `;
 
-const TextCategory = styled.div`
-  padding: 8px;
-  padding-top: 0px;
-  padding-bottom: 32px;
-`;
 const Category = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const TextCategory = styled.div`
+  padding: 8px;
+  padding-top: 0px;
+  padding-bottom: 32px;
 `;

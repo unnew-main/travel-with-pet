@@ -21,7 +21,7 @@ export const Introduce = () => {
             마이페이지
           </TypoGraphy>
         </MyPageText>
-        <HrBold />
+        <Hr />
         <SignUpDate>
           <TypoGraphy>가입일자 : 2022. 03. 25 </TypoGraphy>
           <BtnDots>
@@ -30,48 +30,50 @@ export const Introduce = () => {
         </SignUpDate>
 
         <ContainerInfo>
+          {/* <input
+            type="file"
+            className="imgFile"
+            style={{ display: 'none' }}
+            // onChange={props.onChange}
+          > */}
           <BsPersonCircle size="200px" color="skyblue" />
+          {/* </input> */}
           <ContainerInfoDetail>
-            <TextNickName>
-              <TypoGraphy type="h1" fontWeight="bold">
-                양파먹는 소녀
-              </TypoGraphy>
-            </TextNickName>
+            <NickName placeholder="양파먹는 소녀" />
             <TextEmail>
               <TypoGraphy>19adsfasdf@gmail.com</TypoGraphy>
             </TextEmail>
-            <TextPosts>
-              <TypoGraphy>내가 쓴 글 수</TypoGraphy>
-              <TextPostsCount>
+            <PostsWrapper>
+              <TextPosts>
+                <TypoGraphy>내가 쓴 글 수</TypoGraphy>
+                <TypoGraphy>내가 쓴 댓글 수</TypoGraphy>
+                <TypoGraphy>내가 좋아요한 글 수</TypoGraphy>
+              </TextPosts>
+              <PostsCount>
                 <TypoGraphy color={customColor.brownDark} fontWeight="bold">
                   12
                 </TypoGraphy>
-              </TextPostsCount>
-            </TextPosts>
-            <TextPosts>
-              <TypoGraphy>내가 쓴 댓글 수</TypoGraphy>
-              <TextPostsCount>
                 <TypoGraphy color={customColor.brownDark} fontWeight="bold">
                   12
                 </TypoGraphy>
-              </TextPostsCount>
-            </TextPosts>
-            <TextPosts>
-              <TypoGraphy>내가 좋아요한 글 수</TypoGraphy>
-              <TextPostsCount>
                 <TypoGraphy color={customColor.brownDark} fontWeight="bold">
                   12
                 </TypoGraphy>
-              </TextPostsCount>
-            </TextPosts>
+              </PostsCount>
+            </PostsWrapper>
           </ContainerInfoDetail>
         </ContainerInfo>
 
-        <TextIntroduce>
-          <TypoGraphy color="gray">자기 소개를 작성해주세요</TypoGraphy>
-        </TextIntroduce>
+        <TextIntroduce placeholder="자기소개를 입력해주세요" />
         <Btns>
-          <BtnSave onClick={toggleHandler}>
+          <BtnSave
+            onClick={toggleHandler}
+            style={
+              isSave
+                ? { backgroundColor: customColor.brown }
+                : { backgroundColor: customColor.brownDark }
+            }
+          >
             <TypoGraphy color="white" fontWeight="bold">
               {isSave ? '프로필 저장' : '프로필 수정'}
             </TypoGraphy>
@@ -92,9 +94,9 @@ const MyPageText = styled.div`
   justify-content: center;
 `;
 
-const HrBold = styled.div`
+const Hr = styled.hr`
   width: 1178px;
-  height: 4px;
+  height: 1px;
   background-color: #c4c4c4;
   margin-bottom: 8px;
 `;
@@ -122,7 +124,7 @@ const ContainerInfoDetail = styled.div`
   padding-left: 56px;
 `;
 
-const TextNickName = styled.div`
+const NickName = styled.input`
   border: 2px solid;
   width: 400px;
   padding: 10px;
@@ -136,23 +138,27 @@ const TextEmail = styled.div`
   margin-bottom: 8px;
 `;
 
-const TextPosts = styled.div`
+const PostsWrapper = styled.div`
   display: flex;
   justify-content: column;
-  margin: 8px;
+  gap: 40px;
+`;
+const TextPosts = styled.div`
+  margin-inline: 8px;
 `;
 
-const TextPostsCount = styled.div`
+const PostsCount = styled.div`
   padding-left: 8px;
 `;
 
-const TextIntroduce = styled.div`
+const TextIntroduce = styled.input`
   height: 160px;
-  border: 2px solid;
+  width: 1178px;
+  border: 1px solid;
   border-radius: 16px;
-  margin-inline: 160px;
+  /* margin-inline: 160px; */
   margin-top: 40px;
-  padding: 16px;
+  /* padding: 16px; */
   color: #c4c4c4;
 `;
 
@@ -166,7 +172,6 @@ const BtnSave = styled.button`
   width: 160px;
   height: 40px;
   margin: 8px;
-  background-color: #7d5a50;
   border-color: #7d5a50;
   border-radius: 8px;
   display: flex;

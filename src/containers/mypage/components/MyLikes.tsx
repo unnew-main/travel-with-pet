@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { TypoGraphy } from '../../../components/TypoGraphy';
 import { customColor } from 'src/constants';
 import { PhotoCardList } from 'src/components';
+import { photoCardInfo } from 'src/dummy/photoCardInfo';
 
 export const MyLikes = () => {
   return (
@@ -29,7 +30,7 @@ export const MyLikes = () => {
           </TypoGraphy>
         </TextCategory>
       </Category>
-      <PhotoCardList type="MyPage" />
+      <PhotoCardList type="MyPage" photoCardInfo={photoCardInfo} />
     </>
   );
 };
