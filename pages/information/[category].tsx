@@ -1,9 +1,23 @@
 import { useRouter } from 'next/router';
-import React from 'react';
-import { FixedButton, Notice, Search, TypoGraphy } from 'src/components';
+import React, { useState } from 'react';
+import { FixedButton, Notice, PhotoCardList, Search, TypoGraphy } from 'src/components';
+import { CustomPagination } from 'src/components/CustomPagination';
+import { PhotoCardInfoType } from 'src/constants/photoCard.type';
+import { photoCardInfo, totalItemsCount } from 'src/dummy/photoCardInfo';
 import styled from 'styled-components';
 export default function InformationViewMore() {
   const router = useRouter();
+  const [activePage, setActivePage] = useState<number>(1);
+
+  // 이 부분은 나중에 api 호출로 바뀔거같음 (지금은 UI 구성을 위해 임시로 짜놓은 코드 )
+  const photoCardInfoPiece: PhotoCardInfoType[] = [];
+  const pieceNumber = 16;
+  photoCardInfo.map((data, index) => {
+    if (index < (activePage - 1) * pieceNumber || index > activePage * pieceNumber - 1) {
+      return;
+    }
+    photoCardInfoPiece.push(data);
+  });
   const category = () => {
     switch (router.query.category) {
       case 'travel':
@@ -21,9 +35,18 @@ export default function InformationViewMore() {
       <Search />
       <Notice />
       <CategoryWrapper>
-        <TypoGraphy type='Title' fontWeight='bold'>{category()}</TypoGraphy>
+        <TypoGraphy type="Title" fontWeight="bold">
+          {category()}
+        </TypoGraphy>
       </CategoryWrapper>
       <FixedButton />
+      <PhotoCardList type="MainPage" photoCardInfo={photoCardInfoPiece} />
+      <CustomPagination
+        activePage={activePage}
+        itemsCountPerPage={pieceNumber}
+        totalItemsCount={totalItemsCount}
+        onChange={e => setActivePage(e)}
+      />
     </Container>
   );
 }
@@ -43,5 +66,6 @@ const CategoryWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: 40px;
+  margin-bottom: 40px;
   width: 1178px;
 `;
