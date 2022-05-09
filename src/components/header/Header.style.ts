@@ -14,18 +14,26 @@ export const Container = styled.div`
 
 export const UpHeader = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 55%;
   position: relative;
 `;
+export const A = styled.a`
+  text-decoration: none;
+  height: 100%;
+`;
 export const TitleWrapper = styled.div`
-  position: absolute;
   cursor: pointer;
   margin-left: 30px;
-  bottom: -5px;
-  left: 0px;
+  height: 100%;
+  div {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 `;
 export const UpLeftWrapper = styled.div`
   display: flex;

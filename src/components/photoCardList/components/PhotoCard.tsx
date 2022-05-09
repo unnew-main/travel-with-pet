@@ -1,16 +1,17 @@
 import React from 'react';
 import { Info, Tag } from './index';
-import { PhotoCardInfoType } from 'src/dummy/photoCardInfo';
 import styled from "styled-components";
+import { PhotoCardInfoType } from 'src/constants/photoCard.type';
+import Image from 'next/image';
 type Props = {
-  photoCardInfo: PhotoCardInfoType;
+  data: PhotoCardInfoType;
 };
-export const PhotoCard = ({ photoCardInfo }: Props) => {
+export const PhotoCard = ({ data }: Props) => {
   const { ImageUrl, Area, Like, Text, Writer, Date, Tags }: PhotoCardInfoType =
-    photoCardInfo;
+    data;
   return (
     <Container>
-      <ImageWrapper ImageUrl={ImageUrl} />
+      <Image width={260} height={180} src={ImageUrl} alt="thumbnail" />
       <Info Area={Area} Like={Like} Text={Text} Writer={Writer} Date={Date} />
       <Tag Tags={Tags} />
     </Container>
@@ -20,11 +21,4 @@ export const PhotoCard = ({ photoCardInfo }: Props) => {
 
 const Container = styled.div`
   width: 260px;
-`;
-type ImageProps = {
-  ImageUrl?: string;
-};
-const ImageWrapper = styled.div<ImageProps>`
-  height: 180px;
-  background: ${({ ImageUrl }) => `url(${ImageUrl}) no-repeat`};
 `;
