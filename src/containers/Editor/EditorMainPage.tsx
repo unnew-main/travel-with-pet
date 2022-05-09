@@ -31,10 +31,6 @@ const EditorWithForwardRef = forwardRef<EditorType | undefined, EditorProps>(
 
 EditorWithForwardRef.displayName = 'EditorWithForwardRef';
 
-// interface ToastUiEditorProps extends EditorProps {
-//   forwardedRef: MutableRefObject<EditorType | undefined>;
-// }
-
 export const EditorMainPage: React.FC = () => {
   const [choose, setChoose] = useState('information');
   const editorRef = useRef<EditorType>(null);

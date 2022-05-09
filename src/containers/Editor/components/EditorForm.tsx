@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, MutableRefObject } from 'react';
+import React, { useState, useEffect, MutableRefObject } from 'react';
 import S3 from 'react-aws-s3-typescript';
 import { v4 as uuidv4 } from 'uuid';
 import { Editor, EditorProps } from '@toast-ui/react-editor';
@@ -26,22 +26,22 @@ const EditorForm: React.FC<TuiWithForwardedRefProps> = props => {
 
       forwardedRef.current
         .getInstance()
-        .addHook('addImageBlobHook', (blob, callback) => {
+        .addHook('addImageBlobHook', async (blob, callback) => {
           const s3config = {
-            bucketName: process.env.S3_BUCKET_NAME as string,
-            region: process.env.S3_REGION as string,
-            accessKeyId: process.env.S3_ACCESS_ID as string,
-            secretAccessKey: process.env.S3_ACCESS_KEY as string,
+            bucketName: process.env.NEXT_PUBLIC_S3_UPLOAD_BUCKET as string,
+            region: process.env.NEXT_PUBLIC_S3_UPLOAD_REGION as string,
+            accessKeyId: process.env.NEXT_PUBLIC_S3_UPLOAD_KEY as string,
+            secretAccessKey: process.env.NEXT_PUBLIC_S3_UPLOAD_SECRET as string,
           };
 
           const ReactS3Client = new S3(s3config);
 
-          ReactS3Client.uploadFile(blob, uuidv4())
-            // .then(data => callback(data.location, 'imageURL'))
-            .then(data => {
-              console.log(typeof data);
-            })
-            .catch(err => console.log(err));
+          try {
+            const res = await ReactS3Client.uploadFile(blob, uuidv4());
+            callback(res.location, 'imageURL');
+          } catch (error) {
+            console.log(error);
+          }
         });
     }
   }, []);
@@ -59,9 +59,9 @@ const EditorForm: React.FC<TuiWithForwardedRefProps> = props => {
         plugins={[colorSyntax]}
       />
       <button
-        onClick={() =>
-          console.log(forwardedRef.current.getInstance().getHTML())
-        }
+        onClick={() => {
+          console.log(forwardedRef.current.getInstance().getHTML());
+        }}
       >
         {' '}
         확인
