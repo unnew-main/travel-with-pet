@@ -18,7 +18,6 @@ export interface TuiWithForwardedRefProps extends EditorProps {
 
 const EditorForm: React.FC<TuiWithForwardedRefProps> = props => {
   const { forwardedRef } = props;
-  const [text, setText] = useState('');
 
   useEffect(() => {
     if (forwardedRef.current) {
@@ -47,26 +46,16 @@ const EditorForm: React.FC<TuiWithForwardedRefProps> = props => {
   }, []);
 
   return (
-    <>
-      <Editor
-        {...props}
-        ref={forwardedRef}
-        placeholder="내용을 입력해주세요"
-        previewStyle="vertical"
-        height="800px"
-        initialEditType="markdown"
-        useCommandShortcut={true}
-        plugins={[colorSyntax]}
-      />
-      <button
-        onClick={() => {
-          console.log(forwardedRef.current.getInstance().getHTML());
-        }}
-      >
-        {' '}
-        확인
-      </button>
-    </>
+    <Editor
+      {...props}
+      ref={forwardedRef}
+      placeholder="내용을 입력해주세요"
+      previewStyle="vertical"
+      height="800px"
+      initialEditType="markdown"
+      useCommandShortcut={true}
+      plugins={[colorSyntax]}
+    />
   );
 };
 

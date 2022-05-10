@@ -62,8 +62,8 @@ export const EditorMainPage: React.FC = () => {
       <Hr />
       <Input placeholder="#태그 #입력 #인천" />
       <Hr />
-      <ButtonBox />
       <EditorWithForwardRef ref={editorRef} />
+      <ButtonBox />
     </Wrapper>
   );
 };
