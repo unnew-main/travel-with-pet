@@ -37,7 +37,9 @@ export default function ListContents() {
                       {data.Title}
                     </TypoGraphy>
                   </TitleWrapper>
-                  <Tag Tags={data.Tags} />
+                  <TagWrapper>
+                    <Tag Tags={data.Tags} />
+                  </TagWrapper>
                 </TitleContainer>
               </LeftWrapper>
               <RightWrapper>
@@ -116,6 +118,10 @@ const TitleWrapper = styled.div`
     overflow: hidden;
   }
 `;
+const TagWrapper = styled.div`
+  width: 100%;
+  overflow: hidden;
+`;
 const ListWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -125,8 +131,6 @@ const ListWrapper = styled.div`
   width: 100%;
   max-width: 1178px;
 `;
-
-
 
 const RightWrapper = styled.div`
   display: flex;
@@ -139,3 +143,4 @@ const TextWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
