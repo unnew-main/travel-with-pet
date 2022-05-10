@@ -86,6 +86,8 @@ const SearchWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  max-width: 850px;
   transform: translate(-50%, -50%);
 `;
 
@@ -93,13 +95,16 @@ const Input = styled.input`
   border: none;
   background: transparent;
   border-bottom: 2px solid ${customColor.white};
-  width: 850px;
+  width: 100%;
   padding: 0 0 5px 5px;
   color: ${customColor.white};
   font-size: 20px;
   :focus {
     outline: none;
   }
+  /* @media screen and (min-width: 1024px) {
+    width: 850px;
+  } */
 `;
 
 const IconWrapper = styled.div`
@@ -112,7 +117,10 @@ const IconWrapper = styled.div`
 
 const RecommendWrapper = styled.div`
   display: flex;
-  width: 850px;
+  width: 100%;
+  /* @media screen and (min-width: 1024px) {
+    width: 850px;
+  } */
   margin-top: 16px;
   align-items: flex-end;
   justify-content: space-around;
