@@ -19,18 +19,18 @@ export default function ListContents() {
     return formattedDate;
   };
   return (
-    <>
+    <Container>
       {dailyListInfo.map((data, index) => {
         // 이 부분은 나중에 api 호출로 바뀔거같음 (지금은 UI 구성을 위해 임시로 짜놓은 코드)
         if (index < activePage * 10 && index >= (activePage - 1) * 10)
           return (
             <ListWrapper key={data.id}>
               <LeftWrapper>
-                <LikeWrapper>
+                <HeartWrapper>
                   <TypoGraphy type="body1" fontWeight="bold">
                     {data.Like}
                   </TypoGraphy>
-                </LikeWrapper>
+                </HeartWrapper>
                 <TitleContainer>
                   <TitleWrapper>
                     <TypoGraphy type="body1" fontWeight="bold">
@@ -43,7 +43,7 @@ export default function ListContents() {
               <RightWrapper>
                 <TextWrapper>
                   <TypoGraphy type="body1" fontWeight="bold">
-                    {data.ImageUrl ? <AiOutlinePicture fontSize={28} /> : ''}
+                    {data.ImageUrl && <AiOutlinePicture fontSize={28} />}
                   </TypoGraphy>
                 </TextWrapper>
                 <TextWrapper>
@@ -75,19 +75,42 @@ export default function ListContents() {
         totalItemsCount={totalItemsCount}
         onChange={e => setActivePage(e)}
       />
-    </>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1178px;
+`;
+
+const LeftWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 50%;
+`;
+
+const HeartWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: 20%;
+  width: 80px;
+`;
 
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 80%;
   gap: 4px 0;
 `;
+
 const TitleWrapper = styled.div`
   div {
-    width: 400px;
+    width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -99,15 +122,15 @@ const ListWrapper = styled.div`
   justify-content: space-between;
   height: 80px;
   border-bottom: 1px solid ${customColor.gray};
+  width: 100%;
+  max-width: 1178px;
 `;
 
-const LeftWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
+
 
 const RightWrapper = styled.div`
   display: flex;
+  width: 50%;
 `;
 
 const TextWrapper = styled.div`
@@ -115,10 +138,4 @@ const TextWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-const LikeWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 80px;
-  margin-right: 20px;
 `;

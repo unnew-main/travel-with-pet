@@ -41,7 +41,8 @@ const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  width: 1178px;
+  width: 100%;
+  max-width: 1178px;
 `;
 
 const FilterContainer = styled.div`
