@@ -6,6 +6,7 @@ import { AiOutlinePicture } from 'react-icons/ai';
 import { customColor } from 'src/constants';
 import { Tag } from './Tag';
 import { CustomPagination } from 'src/components/CustomPagination';
+import Link from 'next/link';
 
 export default function ListContents() {
   const [activePage, setActivePage] = useState<number>(1);
@@ -32,11 +33,15 @@ export default function ListContents() {
                   </TypoGraphy>
                 </HeartWrapper>
                 <TitleContainer>
-                  <TitleWrapper>
-                    <TypoGraphy type="body1" fontWeight="bold">
-                      {data.Title}
-                    </TypoGraphy>
-                  </TitleWrapper>
+                  <Link href={`/daily/detail/${data.id}`}>
+                    <a style={{ textDecoration: 'none' }}>
+                      <TitleWrapper>
+                        <TypoGraphy type="body1" fontWeight="bold">
+                          {data.Title}
+                        </TypoGraphy>
+                      </TitleWrapper>
+                    </a>
+                  </Link>
                   <TagWrapper>
                     <Tag Tags={data.Tags} />
                   </TagWrapper>
@@ -143,4 +148,3 @@ const TextWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
