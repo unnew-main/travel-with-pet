@@ -96,15 +96,12 @@ const Input = styled.input`
   background: transparent;
   border-bottom: 2px solid ${customColor.white};
   width: 100%;
-  padding: 0 0 5px 5px;
+  padding: 5px 0;
   color: ${customColor.white};
   font-size: 20px;
   :focus {
     outline: none;
   }
-  /* @media screen and (min-width: 1024px) {
-    width: 850px;
-  } */
 `;
 
 const IconWrapper = styled.div`
