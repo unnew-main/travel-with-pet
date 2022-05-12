@@ -110,6 +110,7 @@ export const EditorMainPage: React.FC = () => {
       ) : (
         <Input placeholder="제목을 입력하세요" />
       )}
+
       <Hr />
       <Input placeholder="#태그 #입력 #인천" />
       <Hr />

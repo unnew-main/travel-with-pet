@@ -45,8 +45,8 @@ export const Introduce = () => {
             </TextEmail>
             <PostsWrapper>
               <TextPosts>
-                <TypoGraphy>내가 쓴 글 수</TypoGraphy>
-                <TypoGraphy>내가 쓴 댓글 수</TypoGraphy>
+                <TypoGraphy>내가 작성한 글 수</TypoGraphy>
+                <TypoGraphy>내가 작성한 댓글 수</TypoGraphy>
                 <TypoGraphy>내가 좋아요한 글 수</TypoGraphy>
               </TextPosts>
               <PostsCount>
