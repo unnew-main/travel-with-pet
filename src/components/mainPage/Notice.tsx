@@ -31,9 +31,11 @@ const Container = styled.div`
 `;
 const NoticeWrapper = styled.div`
   display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1178px;
   align-items: center;
   color: ${customColor.brown};
-  white-space: nowrap;
 `;
 
 const IconWrapper = styled.div`
@@ -42,6 +44,7 @@ const IconWrapper = styled.div`
 
 const Line = styled.div`
   border-bottom: 1px solid ${customColor.gray};
-  width: 1178px;
+  width: 100%;
+  max-width: 1178px;
   margin-top: 80px;
 `;
