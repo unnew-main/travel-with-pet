@@ -36,9 +36,18 @@ export const Header = () => {
               </S.A>
             </Link>
           </S.WriteButtonWrapper>
-          <S.AlertButtonWrapper>
-            <VscBell />
-          </S.AlertButtonWrapper>
+          <Link
+            href={
+              'http://ec2-3-37-80-15.ap-northeast-2.compute.amazonaws.com:4000/google'
+            }
+            passHref
+          >
+            <S.A>
+              <S.AlertButtonWrapper>
+                <VscBell />
+              </S.AlertButtonWrapper>
+            </S.A>
+          </Link>
         </S.UpLeftWrapper>
       </S.UpHeader>
       <S.DownHeader>
