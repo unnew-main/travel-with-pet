@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MutableRefObject } from 'react';
+import React, { useEffect, MutableRefObject } from 'react';
 import S3 from 'react-aws-s3-typescript';
 import { v4 as uuidv4 } from 'uuid';
 import { Editor, EditorProps } from '@toast-ui/react-editor';
@@ -43,7 +43,7 @@ const EditorForm: React.FC<TuiWithForwardedRefProps> = props => {
           }
         });
     }
-  }, []);
+  }, [forwardedRef]);
 
   return (
     <Editor
