@@ -98,7 +98,7 @@ export const IntroMainPage = () => {
             data-aos-easing="ease-in-sine"
             data-aos-anchor-placement="bottom-center"
           >
-            <ArrowBtn onClick={() => alert('로그인 로직')} />
+            <ArrowBtn onClick={() => alert('로그인 로직임')} />
           </AnimationArrow>
         </TypoGraphy>
       </BottomContent>
