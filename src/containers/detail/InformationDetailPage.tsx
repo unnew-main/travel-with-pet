@@ -3,23 +3,10 @@ import { DetailBody, InformationDetailHeader, CommentList } from './components';
 import { photoCardInfo as dummyPhotoData } from 'src/dummy/photoCardInfo';
 import { comments } from 'src/dummy/comments';
 import { useState } from 'react';
-import { OwnerType } from 'src/types/user';
+import { OwnerType } from 'src/types/user.type';
+import { InformationBoardType } from 'src/types/board.type';
 type Props = {
-  detailInfo: {
-    _id: string;
-    title: string;
-    category: string;
-    city: string;
-    detailCity: string;
-    tags: string;
-    contents: string;
-    heart: number;
-    commentCount: number;
-    comments: any[];
-    owner: OwnerType;
-    createdAt: Date;
-    __v: number;
-  };
+  detailInfo: InformationBoardType;
 };
 
 // const dummyData = {

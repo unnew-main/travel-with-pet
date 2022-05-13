@@ -4,7 +4,7 @@ import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { AiFillHeart } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
-import { OwnerType } from 'src/types/user';
+import { OwnerType } from 'src/types/user.type';
 import { formatDate } from 'src/utils/formatDate';
 
 type Props = {

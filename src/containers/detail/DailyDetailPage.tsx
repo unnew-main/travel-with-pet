@@ -3,20 +3,10 @@ import { DetailBody, CommentList, DailyDetailHeader } from './components';
 import { dailyInfo } from 'src/dummy/daily';
 import { comments } from 'src/dummy/comments';
 import { useState } from 'react';
-import { OwnerType } from 'src/types/user';
+import { OwnerType } from 'src/types/user.type';
+import { DailyBoardType } from 'src/types/board.type';
 type Props = {
-  detailInfo: {
-    _id: string;
-    title: string;
-    tags: string;
-    contents: string;
-    heart: number;
-    commentCount: number;
-    comments: any[];
-    owner: OwnerType;
-    createdAt: Date;
-    __v: number;
-  };
+  detailInfo: DailyBoardType;
 };
 
 // const dummyData = {

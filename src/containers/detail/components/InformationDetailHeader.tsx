@@ -5,7 +5,7 @@ import styled from 'styled-components';
 // import { AiFillHeart } from 'react-icons/ai';
 // import { BsPerson } from 'react-icons/bs';
 import { formatDate } from 'src/utils/formatDate';
-import { OwnerType } from 'src/types/user';
+import { OwnerType } from 'src/types/user.type';
 
 type Props = {
   headerInfo: {
