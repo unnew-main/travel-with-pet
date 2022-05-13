@@ -9,8 +9,10 @@ type Props = {
 };
 
 export const PhotoCard = ({ data }: Props) => {
-  const { id, ImageUrl, Area, Like, Text, Writer, Date, Tags }: PhotoCardInfoType =
-    data;
+  // const { id, ImageUrl, Area, Like, Text, Writer, Date, Tags }: PhotoCardInfoType = data;
+  const { id, ImageUrl, Area, Text, Writer, Date, Tags }: PhotoCardInfoType = data;
+
+    
   return (
     <Container>
       <Link href={`information/detail/${id}`}>
@@ -18,7 +20,7 @@ export const PhotoCard = ({ data }: Props) => {
           <Image width={260} height={180} src={ImageUrl} alt="thumbnail" />
           <Info
             Area={Area}
-            Like={Like}
+            // Like={Like}
             Text={Text}
             Writer={Writer}
             Date={Date}
