@@ -39,7 +39,7 @@ export const DailyDetailHeader = ({ detailData }: Props) => {
             {detailData.Date}
           </TypoGraphy>
         </Info>
-        <Info>
+        {/* <Info>
           <IconWrapper color={customColor.red}>
             <AiFillHeart />
           </IconWrapper>
@@ -55,7 +55,7 @@ export const DailyDetailHeader = ({ detailData }: Props) => {
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">
             {detailData.View}
           </TypoGraphy>
-        </Info>
+        </Info> */}
       </InfoWrapper>
     </Container>
   );

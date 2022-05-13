@@ -12,14 +12,14 @@ const dummyData = {
   View: 23,
 };
 export const DailyDetailPage = ({ id }: Props) => {
-  const [likeSelected, setLikeSelected] = useState(false);
+  // const [likeSelected, setLikeSelected] = useState(false);
 
   return (
     <S.Container>
       <DailyDetailHeader detailData={dummyData} />
       <DetailBody
-        likeSelected={likeSelected}
-        setLikeSelected={setLikeSelected}
+      // likeSelected={likeSelected}
+      // setLikeSelected={setLikeSelected}
       />
       <CommentList data={comments} />
     </S.Container>
