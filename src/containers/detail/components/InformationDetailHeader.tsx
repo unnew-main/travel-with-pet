@@ -4,37 +4,45 @@ import { customColor } from 'src/constants';
 import styled from 'styled-components';
 // import { AiFillHeart } from 'react-icons/ai';
 // import { BsPerson } from 'react-icons/bs';
-import { PhotoCardInfoType } from 'src/constants/photoCard.type';
 import { formatDate } from 'src/utils/formatDate';
+import { OwnerType } from 'src/types/user';
 
 type Props = {
-  detailData: PhotoCardInfoType & { detailArea: string } & { View: number };
+  headerInfo: {
+    title: string;
+    category: string;
+    city: string;
+    detailCity: string;
+    tags: string;
+    owner: OwnerType['name'];
+    createdAt: Date;
+  };
 };
-export const InformationDetailHeader = ({ detailData }: Props) => {
+export const InformationDetailHeader = ({ headerInfo }: Props) => {
   return (
     <Container>
       <Area>
         <TypoGraphy type="Title" color={customColor.orange} fontWeight="bold">
-          {detailData.Area}
+          {headerInfo.city}
         </TypoGraphy>
       </Area>
       <DetailArea>
         <TypoGraphy type="h3" color={customColor.black} fontWeight="bold">
-          {detailData.detailArea}
+          {headerInfo.detailCity}
         </TypoGraphy>
       </DetailArea>
       <TagWrapper>
-        <Tag Tags={detailData.Tags} />
+        <Tag Tags={headerInfo.tags} />
       </TagWrapper>
       <InfoWrapper>
         <Info>
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">
-            {detailData.Writer}
+            {headerInfo.owner}
           </TypoGraphy>
         </Info>
         <Info>
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">
-            {formatDate(detailData.Date)}
+            {formatDate(headerInfo.createdAt)}
           </TypoGraphy>
         </Info>
         {/* <Info>

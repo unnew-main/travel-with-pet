@@ -7,12 +7,9 @@ import { Comment } from './';
 import { useState } from 'react';
 
 type Props = {
-  data: CommentsType[];
+  commentListProps: CommentsType[];
 };
-export const CommentList = ({ data }: Props) => {
-  const [activePage, setActivePage] = useState(0);
-  const [perPage, setPerPage] = useState(3);
-  const [totalPage, setTotlePage] = useState(4);
+export const CommentList = ({ commentListProps }: Props) => {
   const handleReportButton = () => {};
 
   return (
@@ -35,7 +32,7 @@ export const CommentList = ({ data }: Props) => {
       <Line />
 
       <CommentWrapper>
-        {data.map(data => (
+        {commentListProps.map(data => (
           <Comment key={data.id} data={data} />
         ))}
       </CommentWrapper>
