@@ -4,42 +4,40 @@ import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { AiFillHeart } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
+import { OwnerType } from 'src/types/user.type';
+import { formatDate } from 'src/utils/formatDate';
 
 type Props = {
-  detailData: {
-    ImageUrl: string;
-    Title: string;
-    Like: number;
-    Text: string;
-    Writer: string;
-    Date: string;
-    Tags: string[];
-    View: number;
+  headerInfo: {
+    title: string;
+    tags: string;
+    owner: OwnerType['name'];
+    createdAt: Date;
   };
 };
-export const DailyDetailHeader = ({ detailData }: Props) => {
+export const DailyDetailHeader = ({ headerInfo }: Props) => {
   return (
     <Container>
       <TitleWrapper>
         <TypoGraphy type="Title" color={customColor.black} fontWeight="bold">
-          {detailData.Title}
+          {headerInfo.title}
         </TypoGraphy>
       </TitleWrapper>
       <TagWrapper>
-        <Tag Tags={detailData.Tags} />
+        <Tag Tags={headerInfo.tags} />
       </TagWrapper>
       <InfoWrapper>
         <Info>
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">
-            {detailData.Writer}
+            {headerInfo.owner}
           </TypoGraphy>
         </Info>
         <Info>
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">
-            {detailData.Date}
+            {formatDate(headerInfo.createdAt)}
           </TypoGraphy>
         </Info>
-        <Info>
+        {/* <Info>
           <IconWrapper color={customColor.red}>
             <AiFillHeart />
           </IconWrapper>
@@ -55,7 +53,7 @@ export const DailyDetailHeader = ({ detailData }: Props) => {
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">
             {detailData.View}
           </TypoGraphy>
-        </Info>
+        </Info> */}
       </InfoWrapper>
     </Container>
   );

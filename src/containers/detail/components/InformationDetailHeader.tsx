@@ -1,42 +1,51 @@
 import { TypoGraphy } from 'src/components';
 import { Tag } from 'src/components/photoCardList/components';
 import { customColor } from 'src/constants';
-import { PhotoCardInfoType } from 'src/dummy/photoCardInfo';
 import styled from 'styled-components';
-import { AiFillHeart } from 'react-icons/ai';
-import { BsPerson } from 'react-icons/bs';
+// import { AiFillHeart } from 'react-icons/ai';
+// import { BsPerson } from 'react-icons/bs';
+import { formatDate } from 'src/utils/formatDate';
+import { OwnerType } from 'src/types/user.type';
 
 type Props = {
-  detailData: PhotoCardInfoType & { detailArea: string } & { View: number };
+  headerInfo: {
+    title: string;
+    category: string;
+    city: string;
+    detailCity: string;
+    tags: string;
+    owner: OwnerType['name'];
+    createdAt: Date;
+  };
 };
-export const InformationDetailHeader = ({ detailData }: Props) => {
+export const InformationDetailHeader = ({ headerInfo }: Props) => {
   return (
     <Container>
       <Area>
         <TypoGraphy type="Title" color={customColor.orange} fontWeight="bold">
-          {detailData.Area}
+          {headerInfo.city}
         </TypoGraphy>
       </Area>
       <DetailArea>
         <TypoGraphy type="h3" color={customColor.black} fontWeight="bold">
-          {detailData.detailArea}
+          {headerInfo.detailCity}
         </TypoGraphy>
       </DetailArea>
       <TagWrapper>
-        <Tag Tags={detailData.Tags} />
+        <Tag Tags={headerInfo.tags} />
       </TagWrapper>
       <InfoWrapper>
         <Info>
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">
-            {detailData.Writer}
+            {headerInfo.owner}
           </TypoGraphy>
         </Info>
         <Info>
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">
-            {detailData.Date}
+            {formatDate(headerInfo.createdAt)}
           </TypoGraphy>
         </Info>
-        <Info>
+        {/* <Info>
           <IconWrapper color={customColor.red}>
             <AiFillHeart />
           </IconWrapper>
@@ -52,7 +61,7 @@ export const InformationDetailHeader = ({ detailData }: Props) => {
           <TypoGraphy type="body2" color={customColor.gray} fontHeight="20px">
             {detailData.View}
           </TypoGraphy>
-        </Info>
+        </Info> */}
       </InfoWrapper>
     </Container>
   );
@@ -94,11 +103,11 @@ const Info = styled.div`
   }
 `;
 
-const IconWrapper = styled.div<{ color: string }>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 8px;
-  color: ${({ color }) => color};
-  font-size: 20px;
-`;
+// const IconWrapper = styled.div<{ color: string }>`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-right: 8px;
+//   color: ${({ color }) => color};
+//   font-size: 20px;
+// `;
