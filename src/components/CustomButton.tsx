@@ -6,7 +6,7 @@ import { TypoGraphy } from 'src/components';
 type ButtonProps = {
   text: string;
   width: number;
-
+  
   height?: number;
   color?: string;
   borderRadius?: number;
@@ -27,7 +27,6 @@ type ButtonStyledProps = {
 export const CustomButton: React.FC<ButtonProps> = ({
   text,
   width,
-
   height,
   color,
   backGroundColor,

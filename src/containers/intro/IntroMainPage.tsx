@@ -7,7 +7,6 @@ import pet1 from 'src/assets/image/pet1.jpg';
 import pet2 from 'src/assets/image/pet2.jpg';
 import pet3 from 'src/assets/image/pet3.jpg';
 import pet4 from 'src/assets/image/pet4.jpg';
-
 import { ImArrowRight2 } from 'react-icons/im';
 
 export const IntroMainPage = () => {
