@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
+import { IntroMainPage } from 'src/containers/index';
 
 const Home: NextPage = () => {
-  //로직
-  return <>{/* <MainPage /> */}</>;
+  return <IntroMainPage />;
 };
 
 export default Home;
