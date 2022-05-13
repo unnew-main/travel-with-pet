@@ -36,9 +36,9 @@ export const Header = () => {
               </S.A>
             </Link>
           </S.WriteButtonWrapper>
-          <S.AlertButtonWrapper>
+          {/* <S.AlertButtonWrapper>
             <VscBell />
-          </S.AlertButtonWrapper>
+          </S.AlertButtonWrapper> */}
         </S.UpLeftWrapper>
       </S.UpHeader>
       <S.DownHeader>
