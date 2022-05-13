@@ -1,18 +1,20 @@
 import React from 'react';
 import { TypoGraphy } from 'src/components';
-import { customColor } from 'src/constants';
+// import { customColor } from 'src/constants';
 import styled from 'styled-components';
-type Props = {
-  filter: string;
-  setFilter: React.Dispatch<React.SetStateAction<string>>;
-};
-export function TitleAndFilter({ filter, setFilter }: Props) {
+// type Props = {
+//   filter: string;
+//   setFilter: React.Dispatch<React.SetStateAction<string>>;
+// };
+export function TitleAndFilter(
+  // { filter, setFilter }: Props
+  ) {
   return (
     <TitleWrapper>
       <TypoGraphy type="Title" fontWeight="bold">
         일상
       </TypoGraphy>
-      <FilterContainer>
+      {/* <FilterContainer>
         <FilterWrapper onClick={() => setFilter('최신순')}>
           <TypoGraphy
             type="body1"
@@ -31,7 +33,7 @@ export function TitleAndFilter({ filter, setFilter }: Props) {
             추천순
           </TypoGraphy>
         </FilterWrapper>
-      </FilterContainer>
+      </FilterContainer> */}
     </TitleWrapper>
   );
 }
@@ -45,11 +47,11 @@ const TitleWrapper = styled.div`
   max-width: 1178px;
 `;
 
-const FilterContainer = styled.div`
-  display: flex;
-  gap: 0 20px;
-`;
+// const FilterContainer = styled.div`
+//   display: flex;
+//   gap: 0 20px;
+// `;
 
-const FilterWrapper = styled.div`
-  cursor: pointer;
-`;
+// const FilterWrapper = styled.div`
+//   cursor: pointer;
+// `;

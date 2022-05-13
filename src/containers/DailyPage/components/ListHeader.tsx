@@ -1,7 +1,7 @@
 import React from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { FaHeart } from 'react-icons/fa';
+// import { FaHeart } from 'react-icons/fa';
 import { TypoGraphy } from 'src/components';
 const rightHeader = ['사진', '댓글 수', '작성자', '작성일'];
 
@@ -10,7 +10,10 @@ export default function ListHeader() {
     <Container>
       <LeftHeaderWrapper>
         <HeartWrapper>
-          <FaHeart color="red" fontSize={20} />
+          {/* <FaHeart color="red" fontSize={20} /> */}
+          <TypoGraphy type="h3" color={customColor.white}>
+            No.
+          </TypoGraphy>
         </HeartWrapper>
         <TypoGraphy type="h3" fontWeight="bold" color={customColor.white}>
           제목

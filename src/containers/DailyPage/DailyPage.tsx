@@ -5,14 +5,16 @@ import { List } from './components/List';
 import { TitleAndFilter } from './components/TitleAndFilter';
 
 export function DailyPage() {
-  const [filter, setFilter] = useState('최신순');
+  // const [filter, setFilter] = useState('최신순');
 
   return (
     <Container>
       <Search />
       <Notice />
       <FixedButton />
-      <TitleAndFilter filter={filter} setFilter={setFilter} />
+      <TitleAndFilter
+      // filter={filter} setFilter={setFilter}
+      />
       <List />
     </Container>
   );

@@ -27,9 +27,11 @@ export default function ListContents() {
           return (
             <ListWrapper key={data.id}>
               <LeftWrapper>
+                {/* 우선, 좋아요가 아닌 넘버값으로 사용할 예정 */}
                 <HeartWrapper>
                   <TypoGraphy type="body1" fontWeight="bold">
-                    {data.Like}
+                    {index + 1}
+                    {/* {data.Like} */}
                   </TypoGraphy>
                 </HeartWrapper>
                 <TitleContainer>
