@@ -12,9 +12,9 @@ export default function ListHeader() {
         <HeartWrapper>
           <FaHeart color="red" fontSize={20} />
         </HeartWrapper>
-          <TypoGraphy type="h3" fontWeight="bold" color={customColor.white}>
-            제목
-          </TypoGraphy>
+        <TypoGraphy type="h3" fontWeight="bold" color={customColor.white}>
+          제목
+        </TypoGraphy>
       </LeftHeaderWrapper>
       <RightHeaderWrapper>
         {rightHeader.map((data, index) => (
@@ -33,7 +33,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1178px;
+  width: 100%;
+  max-width: 1178px;
   height: 60px;
   background-color: ${customColor.brownLight};
 `;
@@ -41,6 +42,7 @@ const Container = styled.div`
 const HeartWrapper = styled.div`
   display: flex;
   justify-content: center;
+  max-width: 20%;
   width: 80px;
   margin-right: 20px;
 `;
@@ -48,14 +50,19 @@ const HeartWrapper = styled.div`
 const LeftHeaderWrapper = styled.div`
   display: flex;
   align-items: center;
+  width: 50%;
 `;
 
 const RightHeaderWrapper = styled.div`
   display: flex;
+  width: 50%;
 `;
 
-const TextWrapper =styled.div`
+const TextWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 140px;
+  div {
+    text-align: center;
+  }
 `;

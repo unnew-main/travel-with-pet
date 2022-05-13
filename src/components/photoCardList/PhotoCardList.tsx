@@ -23,7 +23,8 @@ type StyledListProps = {
   type: 'MainPage' | 'MyPage';
 };
 const Wrapper = styled.div<StyledListProps>`
-  width: ${({ type }) => (type === 'MainPage' ? '1178px' : '870px')};
+  width: 100%;
+  max-width: ${({ type }) => (type === 'MainPage' ? '1178px' : '870px')};
   display: flex;
   justify-content: space-between;
   margin-bottom: 80px;

@@ -7,6 +7,7 @@ import MainPageSearchBG from 'src/assets/image/MainPageSearchBG.jpg';
 import styled from 'styled-components';
 import { Recommend } from './Recommend';
 import { useRef } from 'react';
+import { useRouter } from 'next/router';
 
 const RecommendTag = [
   '#서울',
@@ -17,9 +18,21 @@ const RecommendTag = [
 ];
 export const Search = () => {
   const [search, setSearch] = useState('');
+  const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
+  };
+  const onSearch = () => {
+    router.push(
+      {
+        pathname: `/search`,
+        query: {
+          search,
+        },
+      },
+      '/search',
+    );
   };
   const onReset = () => {
     setSearch('');
@@ -39,7 +52,7 @@ export const Search = () => {
       <SearchWrapper>
         <Input value={search} onChange={onChange} ref={inputRef} />
         <IconWrapper>
-          <AiOutlineSearch fontSize={40} />
+          <AiOutlineSearch fontSize={40} onClick={onSearch} />
           <AiOutlineClose fontSize={40} onClick={onReset} />
         </IconWrapper>
         <RecommendWrapper>
@@ -73,6 +86,8 @@ const SearchWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  max-width: 850px;
   transform: translate(-50%, -50%);
 `;
 
@@ -80,8 +95,8 @@ const Input = styled.input`
   border: none;
   background: transparent;
   border-bottom: 2px solid ${customColor.white};
-  width: 850px;
-  padding: 0 0 5px 5px;
+  width: 100%;
+  padding: 5px 0;
   color: ${customColor.white};
   font-size: 20px;
   :focus {
@@ -99,7 +114,10 @@ const IconWrapper = styled.div`
 
 const RecommendWrapper = styled.div`
   display: flex;
-  width: 850px;
+  width: 100%;
+  /* @media screen and (min-width: 1024px) {
+    width: 850px;
+  } */
   margin-top: 16px;
   align-items: flex-end;
   justify-content: space-around;
