@@ -27,7 +27,7 @@ export const boardApi = {
   getAllRecentOther: async () => {
     return api.post('/writing/all/recent/etc', {});
   },
-  // ----------------- 정보 최신순 더보기 API -------------->>>
+  // -------------------------------------------------->>>
 
   // <<<----------------- 정보 좋아요순 더보기 API --------------
   /**  정보페이지 여행 좋아요순 더보기 데이터 출력 API */
@@ -46,7 +46,7 @@ export const boardApi = {
   getAllHeartOther: async () => {
     return api.post('/writing/all/heart/etc', {});
   },
-  // ----------------- 정보 좋아요순 더보기 API -------------->>>
+  // ----------------------------------------------->>>
 
   /**  일상페이지 전체 데이터 출력 API */
   getAllDaily: async () => {
@@ -61,21 +61,19 @@ export const boardApi = {
   searchDaily: async (data: string) => {
     return api.get('/writing/search/daily', { key: data });
   },
-  // -------------------- 검색 API  -------------->>>
+  // -------------------------------------------->>>
 
   // <<<----------------- 게시글 상세페이지 출력 API  --------------
-  getDetailInfo: async (id: string) => {
+  getDetailInfo: async (id: number) => {
     return api.get(`/writing/info/${id}`, {});
   },
-  getDetailDaily: async (id: string) => {
+  getDetailDaily: async (id: number) => {
     return api.get(`/writing/daily/${id}`, {});
   },
-  // ----------------- 게시글 상세페이지 출력 API  -------------->>>
+  // ------------------------------------------------------>>>
 
-  /**
-   * 마이페이지 내가 쓴 글 출력 API
-   */
-  getMyBoard: async (id: string) => {
+  /** 마이페이지 내가 쓴 글 출력 API */
+  getMyBoard: async (id: number) => {
     return api.get(`/users/${id}`, {});
   },
 };
