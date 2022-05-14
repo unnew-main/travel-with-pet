@@ -13,44 +13,44 @@ export const boardApi = {
   // <<<----------------- 정보 최신순 더보기 API --------------
   /** 정보페이지 여행 최신순 더보기 데이터 출력 API */
   getAllRecentTravel: async () => {
-    return api.post('/writing/all/recent/travel', {});
+    return api.get('/writing/all/recent/travel', {});
   },
   /**  정보페이지 음식점 최신순 더보기 데이터 출력 API */
   getAllRecentShop: async () => {
-    return api.post('/writing/all/recent/store', {});
+    return api.get('/writing/all/recent/store', {});
   },
   /** 정보페이지 숙소 최신순 더보기 데이터 출력 API */
   getAllRecentHotel: async () => {
-    return api.post('/writing/all/recent/place', {});
+    return api.get('/writing/all/recent/place', {});
   },
   /** 정보페이지 기타 최신순 더보기 데이터 출력 API */
   getAllRecentOther: async () => {
-    return api.post('/writing/all/recent/etc', {});
+    return api.get('/writing/all/recent/etc', {});
   },
   // -------------------------------------------------->>>
 
   // <<<----------------- 정보 좋아요순 더보기 API --------------
   /**  정보페이지 여행 좋아요순 더보기 데이터 출력 API */
   getAllHeartTravel: async () => {
-    return api.post('/writing/all/heart/travel', {});
+    return api.get('/writing/all/heart/travel', {});
   },
   /** 정보페이지 음식점 좋아요순 더보기 데이터 출력 API */
   getAllHeartShop: async () => {
-    return api.post('/writing/all/heart/store', {});
+    return api.get('/writing/all/heart/store', {});
   },
   /** 정보페이지 숙소 좋아요순 더보기 데이터 출력 API */
   getAllHeartHotel: async () => {
-    return api.post('/writing/all/heart/place', {});
+    return api.get('/writing/all/heart/place', {});
   },
   /** 정보페이지 기타 좋아요순 더보기 데이터 출력 API */
   getAllHeartOther: async () => {
-    return api.post('/writing/all/heart/etc', {});
+    return api.get('/writing/all/heart/etc', {});
   },
   // ----------------------------------------------->>>
 
   /**  일상페이지 전체 데이터 출력 API */
   getAllDaily: async () => {
-    return api.post('/writing/all/daily', {});
+    return api.get('/writing/all/daily', {});
   },
 
   // <<<----------------- 검색 API  -----------------
@@ -64,16 +64,16 @@ export const boardApi = {
   // -------------------------------------------->>>
 
   // <<<----------------- 게시글 상세페이지 출력 API  --------------
-  getDetailInfo: async (id: number) => {
+  getDetailInfo: async (id: string) => {
     return api.get(`/writing/info/${id}`, {});
   },
-  getDetailDaily: async (id: number) => {
+  getDetailDaily: async (id: string) => {
     return api.get(`/writing/daily/${id}`, {});
   },
   // ------------------------------------------------------>>>
 
   /** 마이페이지 내가 쓴 글 출력 API */
-  getMyBoard: async (id: number) => {
+  getMyBoard: async (id: string) => {
     return api.get(`/users/${id}`, {});
   },
 };
