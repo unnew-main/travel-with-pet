@@ -35,18 +35,20 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-  width: 1178px;
+  width: 100%;
 `;
 
 const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1178px;
+  width: 100%;
+  max-width: 1178px;
   margin-bottom: 40px;
 `;
 
 const Line = styled.div`
   border-bottom: 1px solid ${customColor.gray};
-  width: 1178px;
+  width: 100%;
+  max-width: 1178px;
 `;

@@ -3,13 +3,14 @@ import { TypoGraphy } from 'src/components';
 import { customColor } from 'src/constants';
 import { FaHeart } from 'react-icons/fa';
 import styled from 'styled-components';
+import { formatDate } from 'src/utils/formatDate';
 
 type Props = {
   Area: string;
   Like: number;
   Text: string;
   Writer: string;
-  Date: string;
+  Date: Date;
 };
 export function Info(props: Props) {
   const { Area, Like, Text, Writer, Date } = props;
@@ -38,7 +39,7 @@ export function Info(props: Props) {
           {Writer}
         </TypoGraphy>
         <TypoGraphy fontWeight="bold" color={customColor.gray} type="body3">
-          {Date}
+          {formatDate(Date)}
         </TypoGraphy>
       </ItemWrapper>
     </>
